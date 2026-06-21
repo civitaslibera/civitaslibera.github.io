@@ -1,0 +1,434 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Konflikt Polsko-Ukraiński 1918–1947</title>
+  <style>
+    body { font-family: Georgia, serif; max-width: 860px; margin: 40px auto; padding: 0 20px; line-height: 1.7; color: #1a1a1a; }
+    h1 { font-size: 1.6em; border-bottom: 2px solid #7b1535; padding-bottom: 8px; }
+    h2 { font-size: 1.2em; margin-top: 2em; color: #222; border-left: 4px solid #7b1535; padding-left: 10px; }
+    h3 { font-size: 1em; margin-top: 1.4em; color: #444; }
+    .motto { font-style: italic; color: #c9a96e; margin: 1em 0 2em; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 4px; }
+    table { border-collapse: collapse; width: 100%; margin: 0.6em 0; font-size: 0.9em; }
+    td, th { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+    th { background: #eee; }
+
+    /* ── TIMELINE ─────────────────────────────── */
+    .timeline { position: relative; padding-left: 28px; border-left: 3px solid #ccc; margin: 1.2em 0; }
+    .timeline-item { position: relative; margin-bottom: 1.4em; }
+    .timeline-item::before {
+      content: '';
+      position: absolute; left: -36px; top: 6px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: #888; border: 2px solid #fff; box-shadow: 0 0 0 2px #888;
+    }
+
+    /* Kontekst ogólny / obie strony - fioletowy */
+    .timeline-item.both::before  { background: #6c3483; box-shadow: 0 0 0 2px #6c3483; }
+
+    /* Kontrowersje strony polskiej - czerwony */
+    .timeline-item.pl::before    { background: #7b1535; box-shadow: 0 0 0 2px #7b1535; }
+
+    /* Kontrowersje strony ukraińskiej - żółty */
+    .timeline-item.ua::before    { background: #c9a96e; box-shadow: 0 0 0 2px #c9a96e; }
+
+    /* Zbrodnia ukraińska - żółty (jak kontrowersje UA) + czaszka w tagu */
+    .timeline-item.zb-ua::before { background: #c9a96e; box-shadow: 0 0 0 2px #c9a96e; }
+
+    /* Zbrodnia polska - czerwony (jak kontrowersje PL) + czaszka w tagu */
+    .timeline-item.zb-pl::before { background: #7b1535; box-shadow: 0 0 0 2px #7b1535; }
+
+    /* Akcje PRL - brązowy */
+    .timeline-item.prl::before   { background: #795548; box-shadow: 0 0 0 2px #795548; }
+
+    /* ── TAGI ─────────────────────────────────── */
+    .tag {
+      display: inline-block; font-size: 0.72em;
+      padding: 1px 7px; border-radius: 10px;
+      color: #fff; margin-left: 6px; vertical-align: middle;
+    }
+    .tag.both   { background: #6c3483; }
+    .tag.pl     { background: #7b1535; }
+    .tag.ua     { background: #c9a96e; color: #1a1a1a; }
+    .tag.zb-ua  { background: #c9a96e; color: #1a1a1a; }
+    .tag.zb-pl  { background: #7b1535; }
+    .tag.prl    { background: #795548; }
+
+    .timeline-date { font-size: 0.82em; font-weight: bold; color: #555; margin-bottom: 2px; }
+
+    /* ── PORÓWNANIA - szare ───────────────────── */
+    .cmp-block {
+      background: #f2f3f4; border-left: 3px solid #95a5a6;
+      padding: 8px 14px; margin: 8px 0 0 0;
+      border-radius: 0 4px 4px 0; font-size: 0.9em;
+    }
+    .opinion-block {
+      background: #fdf5e6; border-left: 3px solid #c9a96e;
+      padding: 8px 14px; margin: 8px 0 0 0;
+      border-radius: 0 4px 4px 0; font-size: 0.9em;
+    }
+    .cmp-label {
+      font-size: 0.72em; font-weight: bold; color: #707b7c;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      display: block; margin-bottom: 4px;
+    }
+    .opinion-label {
+      font-size: 0.72em; font-weight: bold; color: #7b1535;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      display: block; margin-bottom: 4px;
+    }
+
+    /* ── LEGENDA ──────────────────────────────── */
+    .legenda { font-size: 0.83em; margin: 0.5em 0 1.4em; color: #444; display: flex; flex-wrap: wrap; gap: 12px; }
+    .legenda-item { display: flex; align-items: center; gap: 5px; }
+    .dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+    .sq  { display: inline-block; width: 14px; height: 12px; border-radius: 2px; flex-shrink: 0; }
+  </style>
+</head>
+<body>
+
+<h1>Konflikt Polsko-Ukraiński 1918–1947</h1>
+
+<p class="motto">Wydarzenia historyczne dzieliły, dzielą i będą dzieliły narody - ale ważne jest, by umieć nazwać zbrodniarza zbrodniarzem.</p>
+
+<h2>Motywacja i zastrzeżenia</h2>
+
+<p>Celem tego dokumentu jest jak najbardziej obiektywne przedstawienie konfliktu polsko-ukraińskiego z uwzględnieniem perspektyw obu stron. Nie jest to narracja propagandowa ani rozliczenie rachunków krzywd.</p>
+
+<p>Jestem Polakiem - i jestem świadomy, że wpływa to na moje postrzeganie historii. Nie jestem historykiem. Staram się jednak wychodzić poza własną narrację: wiem, że Lwów założyła dynastia Rurykowiczów, że rusińska magnateria była integralną częścią szlachty Rzeczypospolitej i że ukraińska tożsamość historyczna na tych ziemiach jest równa Polskiej. Piszę to nie po to, by umniejszyć polskie dziedzictwo, lecz by pokazać, że uczciwa rozmowa wymaga uznania faktów po obu stronach.</p>
+
+<p>Dokument jest świadomie uproszczony - część faktów, kontekstów i wydarzeń została pominięta, by nie stał się encyklopedią. Celem nie jest wyczerpanie tematu, lecz pokazanie ogólnego obrazu tamtych czasów w sposób czytelny i przystępny.</p>
+
+<p class="motto">Żadna reparacja - choćby największa - nie zwróci godności ofierze zabitej w bestialski sposób. To nie jest kwestia pieniędzy ani politycznych gestów. Jedyne, co możemy zrobić wspólnie, to zadbać o pamięć tych zwykłych ludzi: o ich imiona, miejsca, historie. O to, żeby nie zginęli po raz drugi - tym razem w zapomnieniu.</p>
+
+<hr>
+
+<h2>Chronologia 1918–1947</h2>
+
+<div class="legenda">
+  <span class="legenda-item"><span class="dot" style="background:#6c3483"></span> Kontekst ogólny</span>
+  <span class="legenda-item">💀 Zbrodnia</span>
+  <b>Kontrowersje:</b>
+  <span class="legenda-item"><span class="dot" style="background:#7b1535"></span> Polska</span>
+  <span class="legenda-item"><span class="dot" style="background:#c9a96e"></span> Ukraińska</span>
+  <span class="legenda-item"><span class="dot" style="background:#795548"></span> PRL</span>
+</div>
+
+<div class="timeline">
+
+  <div class="timeline-item both">
+    <div class="timeline-date">Listopad 1918 – Czerwiec 1919 <span class="tag both">kontekst</span></div>
+    <p><strong>Wojna Polsko-Ukraińska.</strong> Ukraińcy proklamowali Zachodnioukraińską Republikę Ludową (ZURL) ze Lwowem jako stolicą. Polska wygrała tę wojnę, przejmując Galicję Wschodnią i Wołyń.</p>
+    <div class="cmp-block">
+      <span class="cmp-label">▶ Skład etniczny spornych ziem (spis 1910–1921)</span>
+      <table>
+        <tr><th>Region / Miejsce</th><th>Polacy</th><th>Ukraińcy</th><th>Żydzi</th><th>Uwagi</th></tr>
+        <tr><td><b>Lwów - miasto</b> (1910)</td><td>~51%</td><td>~19%</td><td>~28%</td><td>Dominacja polska i żydowska</td></tr>
+        <tr><td><b>Lwów - okolice wiejskie</b></td><td>~15%</td><td>~75%</td><td>~8%</td><td>Dominacja ukraińska</td></tr>
+        <tr><td><b>Galicja Wschodnia - miasta</b> (1910)</td><td>~45%</td><td>~20%</td><td>~30%</td><td>Polsko-żydowskie centra</td></tr>
+        <tr><td><b>Galicja Wschodnia - wieś</b> (1910)</td><td>~25%</td><td>~65%</td><td>~8%</td><td>Ukraińska większość</td></tr>
+        <tr><td><b>Wołyń - miasta</b> (spis PL 1921)</td><td>~25%</td><td>~40%</td><td>~30%</td><td>Mieszane</td></tr>
+        <tr><td><b>Wołyń - wieś</b> (spis PL 1921)</td><td>~12%</td><td>~75%</td><td>~8%</td><td>Przytłaczająca dominacja ukraińska</td></tr>
+      </table>
+    </div>
+    <div class="opinion-block">
+      <span class="opinion-label">▶ Moja Opinia</span>
+      Wzorzec jednolity: Polacy i Żydzi w miastach, Ukraińcy na wsi. "Czyja ziemia" zależała od tego, czy liczyło się miasto czy wieś - stąd niemożność kompromisu.
+    </div>
+  </div>
+
+  <div class="timeline-item both">
+    <div class="timeline-date">1918–1919 <span class="tag both">💀 zbrodnia PL i UA</span></div>
+    <p><strong>Pogromy Żydów podczas wojny polsko-ukraińskiej.</strong> Żydzi byli ofiarami obu stron konfliktu. <strong>Pogrom lwowski (listopad 1918)</strong>: po zdobyciu Lwowa przez wojska polskie żołnierze i cywile dopuścili się pogromu - szacunki: 52–150 zabitych, setki rannych, masowe rabunki. Pretekstem było oskarżenie Żydów o neutralność lub sprzyjanie Ukraińcom. Po stronie ukraińskiej oddziały atamana Semosenko dokonywały pogromów w kontrolowanych miasteczkach (Proskurów 1919 - ok. 1500 ofiar). Żydzi traktowani jako obcy przez obie strony - mimo że żyli na tych ziemiach od stuleci.</p>
+    <div class="cmp-block">
+      <span class="cmp-label">▶ Porównanie - pogromy podczas rosyjskiej wojny domowej (1918–1921)</span>
+      Pogromy na Zachodniej Ukrainie nie były wyjątkiem - były częścią fali przemocy antyżydowskiej ogarniającej całą przestrzeń posowiecką:<br><br>
+      <b>Białe wojska (Denikin, Wrangel):</b> systematyczne pogromy w Ukrainie w 1919 roku, traktowane przez część oficerów jako element walki z "żydowskim bolszewizmem". Szacunki: 50–150 tys. ofiar śmiertelnych Żydów z rąk Białych.<br><br>
+      <b>Atamani ukraińscy (Machno, Semosenko i inni):</b> pogromy w setkach miasteczek; łączne ofiary sił ukraińskich szacuje się na 30–50 tys.<br><br>
+      <b>Bolszewicy:</b> oficjalnie przeciwni antysemityzmowi, jednak część oddziałów Armii Czerwonej również dopuszczała się pogromów - na znacznie mniejszą skalę.<br><br>
+      Łączna liczba Żydów zabitych we wszystkich pogromach w latach 1918–1921 szacowana jest na <b>50–200 tys.</b> - co czyni ten okres jedną z największych fal antyżydowskiej przemocy przed Holokaustem.
+    </div>
+    <div class="opinion-block">
+      <span class="opinion-label">▶ Moja Opinia</span>
+      Warto odnotować, że obie strony konfliktu - polska i ukraińska - formalnie potępiły te zbrodnie. II RP przeprowadziła dochodzenia w sprawie pogromu lwowskiego i postawiła sprawców przed sądy; wyroki zapadły. Nie były spektakularne, ale biorąc pod uwagę chaos pierwszych miesięcy niepodległego państwa, był to krok zdecydowany. Po stronie ukraińskiej sam Petlura wydawał rozkazy zakazujące pogromów, a część jego oficerów aktywnie próbowała je tłumić - choć bez skutku wobec niesfornych oddziałów. Istotne jest też, że w latach 1921-1939 II RP traktowała antyżydowskie akcje nacjonalistów (pobicia, bojkoty, zamieszki) jako przestępstwa kryminalne. Oznacza to, że państwo jako instytucja nie dyskryminowało Żydów na poziomie prawnym, choć nie można tego samego powiedzieć o nastrojach społecznych i działaniach środowisk nacjonalistycznych.
+    </div>
+  </div>
+
+  <div class="timeline-item both">
+    <div class="timeline-date">Kwiecień 1920 <span class="tag both">kontekst</span></div>
+    <p><strong>Umowa Warszawska - sojusz Piłsudski–Petlura.</strong> Polska uznaje Ukraińską Republikę Ludową (URL) Semena Petlury w zamian za polską kontrolę nad Galicją Wschodnią - URL formalnie zrzeka się ziem na wschód od Zbrucza. Siły polsko-ukraińskie zdobywają Kijów, ale kontrofensywa Armii Czerwonej dociera pod Warszawę (sierpień 1920).</p>
+    <div class="cmp-block">
+      <span class="cmp-label">▶ Porównanie - ta sama dynamika, 1939</span>
+      Gwarancje brytyjskie i francuskie dla Polski (1939): formalne zobowiązania militarne bez realnego wykonania - Polska samotna w obliczu inwazji. W obu przypadkach mniejszy partner sojuszu poświęcony dla „wyższego celu".
+    </div>
+    <div class="opinion-block">
+      <span class="opinion-label">▶ Moja Opinia</span>
+      Zrzeczenie się ziem przez URL było decyzją wymuszoną, nie dobrowolną. Petlura nie miał terytorium, armii ani uznania mocarstw - sojusz z Polską był jedyną szansą powrotu na Ukrainę. Granice miały być kwestią przejściową.
+    </div>
+  </div>
+
+  <div class="timeline-item both">
+    <div class="timeline-date">Marzec 1921 <span class="tag both">kontekst</span></div>
+    <p><strong>Traktat Ryski.</strong> Pokój zawarty bez udziału URL, dzielący Ukrainę między Polskę a Rosję Sowiecką.</p>
+    <div class="cmp-block">
+      <span class="cmp-label">▶ Porównanie - wielkie mocarstwa decydują za innych</span>
+      <b>Konferencja Jałtańska (luty 1945)</b> - Roosevelt, Churchill, Stalin. Ustalono granice i ustrój Polski bez udziału polskiego rządu emigracyjnego. Polska przesunięta na zachód kosztem ziem wschodnich.
+    </div>
+    <div class="opinion-block">
+      <span class="opinion-label">▶ Moja Opinia</span>
+      Jako Polak rozumiem to uczucie - my sami czujemy się zdradzeni przez decyzje Jałty 1945, gdzie wielkie mocarstwa zadecydowały o Polsce bez Polaków. Ukraińcy w 1921 roku mogli poczuć dokładnie to samo: ich los rozstrzygnięto przy stole, przy którym nie mieli miejsca.
+    </div>
+  </div>
+
+  <div class="timeline-item pl">
+    <div class="timeline-date">1921–1939 <span class="tag pl">kontrowersje PL</span></div>
+    <p><strong>Polityka polska na Zachodniej Ukrainie.</strong> Systematyczna polonizacja Zachodniej Ukrainy przez narzędzia prawne i demograficzne:</p>
+    <ul>
+      <li><strong>Osadnictwo (1920–1921).</strong> Ustawa o osadnictwie wojskowym (1920) przyznała ziemię weteranom wojny polsko-bolszewickiej: ok. <strong>10 tys. rodzin osadników wojskowych</strong> i ok. <strong>5 tys. rodzin cywilnych</strong> - łącznie szacunkowo <strong>ok. 60 tys. osób</strong> osiedlonych na Zachodniej Ukrainie. Ziemia pochodziła z parcelacji majątków, często kosztem ukraińskich chłopów.</li>
+      <li><strong>Język i administracja (1924).</strong> Język polski jako jedyny urzędowy w administracji i sądach na Zachodniej Ukrainie - Ukraińcy zmuszeni do korzystania z instytucji w obcym języku.</li>
+      <li><strong>Reforma rolna (1925).</strong> Ustawa o reformie rolnej preferowała polskich osadników przy rozdziale ziemi - Ukraińcy jako mniejszość mieli ograniczony dostęp mimo że stanowili większość ludności wiejskiej.</li>
+      <li><strong>Kościół i religia.</strong> Faworyzowanie Kościoła katolickiego (polskiego) kosztem Kościoła greckokatolickiego i prawosławnego (ukraińskiego) - m.in. przejmowanie cerkwi, ograniczanie działalności parafii.</li>
+      <li><strong>Służba cywilna.</strong> Ukraińcy praktycznie wykluczeni z wyższych stanowisk w administracji państwowej i wojsku na Zachodniej Ukrainie.</li>
+    </ul>
+    <p>Okres ten charakteryzował się głęboką niestabilnością polityczną II RP:</p>
+    <ul>
+      <li><strong>Zabójstwo Narutowicza (1922).</strong> Gabriel Narutowicz, pierwszy prezydent RP wybrany m.in. głosami mniejszości narodowych (Ukraińcy, Żydzi, Niemcy), został zamordowany po 5 dniach urzędowania przez prawicowego nacjonalistę. Pokazało to siłę prawicowego nacjonalizmu i wrogość wobec polityki włączania mniejszości.</li>
+      <li><strong>Rządy prawicowe 1922–1926.</strong> Kolejne gabinety (Chjeno-Piast, centroprawica) prowadziły coraz bardziej restrykcyjną politykę wobec mniejszości - ograniczanie autonomii, osadnictwo wojskowe na Zachodniej Ukrainie jako świadome narzędzie demograficzne. Kulminacją była <strong>ustawa Grabskiego (1924)</strong> - drastyczne ograniczenie ukraińskojęzycznych szkół i zastępowanie ich szkołami "utrakwistycznymi" (polsko-ukraińskimi), co w praktyce oznaczało polonizację oświaty.</li>
+      <li><strong>Przewrót majowy (1926).</strong> Józef Piłsudski obalił demokratycznie wybrany rząd i wprowadził system autorytarny (sanacja). Paradoksalnie wobec mniejszości prowadził politykę bardziej pragmatyczną niż endecka prawica - jednak nie zniósł dyskryminujących praktyk na Zachodniej Ukrainie.</li>
+    </ul>
+    <div class="cmp-block">
+      <span class="cmp-label">▶ Porównanie - bolszewicy wobec Ukraińców (lata 20.)</span>
+      W tym samym czasie po wschodniej stronie granicy bolszewicy prowadzili politykę <strong>ukrainizacji (korenizacja, 1923–1933)</strong> - aktywne wspieranie języka ukraińskiego w szkołach, administracji, kulturze i mediach. Ukraiński stał się językiem urzędowym sowieckiej Ukrainy. Powstawały ukraińskie uczelnie, teatry, prasa.
+    </div>
+    <div class="opinion-block">
+      <span class="opinion-label">▶ Moja Opinia</span>
+      Niezadowolenie Ukraińców jest tu całkowicie zrozumiałe - to co robili Polacy na Zachodniej Ukrainie, Polacy sami przeżyli pod zaborami jako germanizacja i rusyfikacja. Wiedzieliśmy dokładnie, jak to boli, i robiliśmy to samo. Dla Ukraińca żyjącego pod polską polonizacją sowiecki model mógł wyglądać paradoksalnie atrakcyjniej - przynajmniej dopóki Stalin nie odwrócił tej polityki Hołodomorem i likwidacją ukraińskiej inteligencji. Z perspektywy czasu widać, że sowiecka tolerancja była na pokaz - narzędziem wciągnięcia Ukraińców w struktury władzy, nie uznaniem ich praw.
+    </div>
+  </div>
+
+  <div class="timeline-item ua">
+    <div class="timeline-date">1920–1929 <span class="tag ua">kontrowersje UA</span></div>
+    <p><strong>Powstanie UWO i OUN.</strong> Ukraińska Organizacja Wojskowa (UWO, 1920) -pierwsza paramilitarna organizacja ukraińska; z niej wyłoniła się Organizacja Ukraińskich Nacjonalistów (OUN, 1929). Fala podpaleń polskich gospodarstw i sabotaże infrastruktury.</p>
+    <p><strong>Skala działalności :</strong></p>
+    <ul>
+      <li>Kampania sabotażowa 1930 - ok. <strong>2000 aktów</strong> podpaleń, niszczenia linii telegraficznych i sabotażu kolejowego w Galicji Wschodniej; bezpośrednio poprzedzona tą akcją Pacyfikacja</li>
+      <li>Zamachy polityczne 1921–1939 - ponad <strong>60 potwierdzonych zamachów i prób zamachów</strong> na polskich urzędników, policjantów i działaczy</li>
+      <li>Napady na urzędy pocztowe i banki (finansowanie działalności) -kilkanaście udokumentowanych akcji</li>
+    </ul>
+    <div class="cmp-block">
+      <span class="cmp-label">▶ Porównanie - radykalizacja nacjonalizmu po obu stronach</span>
+      W tym samym okresie po stronie polskiej powstawały analogiczne ruchy skrajne:<br><br>
+      <b>Obóz Wielkiej Polski (OWP, 1926)</b> -Roman Dmowski, nacjonalizm integralny, antysemityzm, wizja etnicznie jednolitej Polski.<br><br>
+      <b>Obóz Narodowo-Radykalny (ONR, 1934)</b> -rozłam z OWP, bardziej radykalny, wzorowany na faszyzmie włoskim i niemieckim. Ataki na Żydów, bojówki akademickie, postulat „Polski dla Polaków".<br><br>
+      <em>Kontekst: lata 20. i 30. to w całej Europie okres radykalizacji - NSDAP, faszyści włoscy, Falanga hiszpańska. Zarówno OUN jak i ONR były dziećmi tej samej epoki, nie osobliwościami.</em>
+    </div>
+    <div class="opinion-block">
+      <span class="opinion-label">▶ Moja Opinia</span>
+      Sprzeciw wobec zniewolenia jest naturalny i uzasadniony. Naród pozbawiony innych instrumentów politycznych sięga po to, co mu pozostało - a to, co dziś nazywamy terrorem, było wówczas jedyną dostępną formą oporu dla słabszej strony. Warto jednak odnotować, że działania OUN w tym okresie były w przeważającej mierze wymierzone w osoby funkcyjne - urzędników, policjantów, polityków - a nie w ludność cywilną. 
+    </div>
+  </div>
+
+  <div class="timeline-item pl">
+    <div class="timeline-date">1930 <span class="tag pl">kontrowersje PL</span></div>
+    <p><strong>Pacyfikacja Małopolski Wschodniej</strong> (wrzesień–listopad 1930). Odpowiedź władz na kampanię sabotażową OUN. Represje wymierzono zbiorowo, bez rozróżnienia winnych.</p>
+    <ul>
+      <li>Ok. <strong>500–800 wsi</strong> objętych akcją pacyfikacyjną</li>
+      <li>Ok. <strong>500–800 domostw i budynków gospodarczych</strong> zniszczonych lub spalonych</li>
+      <li>Ok. <strong>1600–2000 osób</strong> aresztowanych i przesłuchiwanych, wielu bitych</li>
+      <li>Ponad <strong>30 czytelni Prosvity</strong> (ukraińskich domów kultury) zdewastowanych lub zamkniętych</li>
+      <li>Konfiskaty dobytku: konie, bydło, zboże</li>
+      <li>Ofiary śmiertelne: <strong>kilka–kilkanaście</strong> (polskie i ukraińskie źródła znacznie się różnią)</li>
+    </ul>
+    <div class="opinion-block">
+      <span class="opinion-label">▶ Moja Opinia</span>
+      Pacyfikacja była ruchem politycznym, który bardziej ujawniał słabość II RP niż siłę. Uciekanie się do zbiorowych represji bez podstawy prawnej, wymierzonych w całe wsie zamiast konkretnych sprawców, to przyznanie się do niemożności rozwiązania problemu środkami prawa. Jedyne co można odnotować na plus - sołtysi i wójtowie byli wcześniej informowani przez ultimatum, co dawało pewne uprzedzenie. To jednak za mało, żeby nazwać to akcją praworządną.
+    </div>
+  </div>
+
+  <div class="timeline-item ua">
+    <div class="timeline-date">1931–1934 <span class="tag ua">kontrowersje UA</span></div>
+    <p><strong>Zamachy OUN.</strong> Seria politycznych morderstw wymierzonych w przedstawicieli polskiego państwa:</p>
+    <ul>
+      <li><strong>1931 - Tadeusz Hołówko</strong> (poseł, zwolennik dialogu polsko-ukraińskiego) - zastrzelony w Truskawcu. Paradoksalnie OUN wyeliminowała jednego z nielicznych Polaków otwartych na kompromis.</li>
+      <li><strong>1934 - Bronisław Pieracki</strong> (minister spraw wewnętrznych) - zastrzelony w Warszawie. Wykonawca: Hryhorij Maciejko na zlecenie OUN-B. Zamach był bezpośrednim impulsem do utworzenia obozu w Berezie Kartuskiej.</li>
+    </ul>
+    <div class="opinion-block">
+      <span class="opinion-label">▶ Moja Opinia</span>
+      Zamachy na polityków jako forma oporu wobec władzy są zjawiskiem dobrze znanym z tamtej epoki i można je rozumieć w tym kontekście. Jednak zabójstwo Hołówki nie miało dla mnie sensu. Był on jednym z niewielu wysoko postawionych polskich polityków rzeczywiście działających na rzecz porozumienia polsko-ukraińskiego - jego "Prometheizm" zakładał budowanie sojuszy z narodami zniewolonymi przez Rosję, w tym z Ukraińcami. OUN wyeliminowała jednego ze swoich potencjalnych sojuszników po stronie polskiej. Ale może po prostu tego nie rozumiem.
+    </div>
+  </div>
+
+  <div class="timeline-item pl">
+    <div class="timeline-date">1934–1939 <span class="tag pl">kontrowersje PL</span></div>
+    <p><strong>Bereza Kartuska.</strong> Jedyny obóz internacyjny II RP, powołany po zamachu na Pierackiego. Bez wyroku sądowego osadzano nacjonalistów (OUN, ONR), komunistów i opozycjonistów. Łącznie ok. 3–3,5 tys. więźniów; śmiertelność: 13–30 osób (~0,5%).</p>
+    <div class="cmp-block">
+      <span class="cmp-label">▶ Porównanie - Gułag (ZSRR)</span>
+      <table>
+        <tr><th></th><th>Bereza Kartuska (II RP)</th><th>Gułag (ZSRR)</th></tr>
+        <tr><td>Łącznie więźniów</td><td>~3–3,5 tys.</td><td>~18–20 mln</td></tr>
+        <tr><td>Śmiertelność</td><td>13–30 osób (~0,5%)</td><td>1,5–2,5 mln (7–15%)</td></tr>
+        <tr><td>Skład</td><td>Polacy, Ukraińcy, Białorusini, Żydzi, Niemcy, Litwini</td><td>Rosjanie, Ukraińcy, Białorusini i inne</td></tr>
+      </table>
+    </div>
+    <div class="opinion-block">
+      <span class="opinion-label">▶ Moja Opinia</span>
+      Bereza to kolejny dowód na słabość państwa wobec ruchów nacjonalistycznych. Zamiast skutecznej polityki integracji lub egzekwowania prawa przez sądy, II RP sięgnęła po internowanie bez wyroku - metodę, która de facto przyznawała, że system prawny nie jest wystarczający. W porównaniu z Gułagiem skala jest nieporównywalna, ale zasada ta sama: izolacja przeciwników politycznych poza ramami prawa.
+    </div>
+  </div>
+
+  <div class="timeline-item both">
+    <div class="timeline-date">1932–1933 <span class="tag both">💀 zbrodnia (ZSRR)</span></div>
+    <p><strong>Hołodomor.</strong> Celowo wywołany przez władze sowieckie głód, skierowany przeciw ukraińskiej wsi. Ofiary: ok. 3,5–7 mln Ukraińców</p>
+  </div>
+
+  <div class="timeline-item both">
+    <div class="timeline-date">17 Września 1939 – 1941 <span class="tag both">kontekst</span></div>
+    <p><strong>Pierwsza okupacja sowiecka.</strong> Wkroczenie ZSRR na Zachodnia Ukraina. Masowe deportacje ludności polskiej w głąb ZSRR (ok. 320–400 tys. osób). Część Ukraińców przyjęła Sowietów z ulgą - co utrwaliło pamięć wzajemnych win po obu stronach. Podobnie jak polska, tak i ukraińska elita była systematycznie likwidowana przez NKVD - aresztowania, rozstrzelania i deportacje dotknęły ukraińskich działaczy, nauczycieli, duchownych i inteligencję.</p>
+    <div class="opinion-block">
+      <span class="opinion-label">▶ Moja Opinia</span>
+      Zadowolenie części Ukraińców z wkroczenia Sowietów wynikało zapewne z doświadczeń z polskim systemem - po latach polonizacji i dyskryminacji każda zmiana mogła wydawać się lepsza. Podejrzewam jednak, że to złudzenie szybko prysło - gdy NKVD zaczęło aresztować tych samych Ukraińców, którzy liczyli na wyzwolenie, rzeczywistość sowieckiej okupacji stała się oczywista. Sowiety nie przynosili wolności - przynosili innego rodzaju zniewolenie.
+    </div>
+  </div>
+
+  <div class="timeline-item zb-ua">
+    <div class="timeline-date">1941 <span class="tag zb-ua">💀 zbrodnia UA</span></div>
+    <p><strong>OUN i Niemcy - pogromy.</strong> Bandera proklamował niepodległość Ukrainy we Lwowie 30 czerwca 1941; Niemcy odrzucili i aresztowali go. Część OUN uczestniczyła mimo to w pogromach Żydów (Lwów 1941) i służyła w policji pomocniczej. Ukraińska 14. Dywizja Waffen-SS „Galizien" walczyła po stronie Niemiec.</p>
+    <div class="cmp-block">
+      <span class="cmp-label">▶ Porównanie - inne „niepodległości" pod patronatem Niemiec</span>
+      <b>Słowacja (od marca 1939):</b> rząd Józefa Tiso, własna armia i administracja - ale wojska niemieckie stacjonowały na terytorium, gospodarka pod kontrolą Berlina, polityka zagraniczna dyktowana przez Rzeszę. Słowacja deportowała własnych Żydów do obozów zagłady. <em>Ocena: państwo marionetkowe, nie suwerenne.</em><br><br>
+      <b>Chorwacja - NDH (od kwietnia 1941):</b> Ustasze u władzy, własna armia i struktury państwowe - ale terytorium podzielone między strefy wpływów Niemiec i Włoch. <em>Ocena: państwo marionetkowe, nie suwerenne.</em><br><br>
+    </div>
+  </div>
+
+
+  <div class="timeline-item zb-ua">
+    <div class="timeline-date">Luty–Marzec 1943 <span class="tag zb-ua">💀 zbrodnia UA</span></div>
+    <p><strong>Pierwsze masowe ataki UPA.</strong> Dziesiątki polskich wsi na Wołyniu spalonych, tysiące ofiar.</p>
+  </div>
+
+  <div class="timeline-item zb-ua">
+    <div class="timeline-date">11 Lipca 1943 - Krwawa Niedziela <span class="tag zb-ua">💀 zbrodnia UA</span></div>
+    <p>Jednoczesny atak na ok. 167 miejscowości podczas niedzielnych mszy. Szacunki: <strong>5–8 tys. ofiar w jednym dniu.</strong></p>
+    <div class="opinion-block">
+      <span class="opinion-label">▶ Moja Opinia</span>
+      Uważam akcję UPA za systematyczną i planową, a nie spontaniczną. Przemawia za tym kilka faktów: ataki obejmowały wiele wiosek jednocześnie na ogromnym obszarze - praktycznie całym terenie wpływów UPA. Trwały miesiącami. Gdyby wynikały wyłącznie z nagromadzonej nienawiści i emocji, dlaczego nie wybuchły wcześniej - pod polską władzą, kiedy ukraińskie krzywdy były świeże? Akcja ruszyła w momencie, gdy II RP już nie istniała, Niemcy i Sowieci wzajemnie się wykrwawiali, a Wołyń był ziemią bez realnego suwerena. To była kalkulacja polityczna i militarna, nie erupcja gniewu. Nie ma jednoznacznych dokumentów nakazujących eksterminację - co strona ukraińska często podnosi. Ale akcje mówią więcej niż dokumenty. Partyzantka z definicji nie zostawia pisemnych rozkazów do eksterminacji cywilów - to nie jest armia regularna z kancelarią. Patrząc przez pryzmat partyzantki: skoordynowanie setek ataków w jednym dniu, na rozległym terenie, z podobnymi metodami, wymaga dowodzenia i planowania. Brak dokumentu nie oznacza braku decyzji.
+    </div>
+  </div>
+
+  <div class="timeline-item zb-ua">
+    <div class="timeline-date">Lato–Jesień 1943 <span class="tag zb-ua">💀 zbrodnia UA</span></div>
+    <p>Systematyczne „oczyszczanie" Wołynia - UPA atakuje kolejne wsie i miasteczka. Ocalali uciekają do miast lub tworzą samoobrony.</p>
+  </div>
+
+  <div class="timeline-item zb-pl">
+    <div class="timeline-date">Jesień 1943 – 1944 <span class="tag zb-pl">💀 zbrodnia PL</span></div>
+    <p><strong>Polskie akcje odwetowe.</strong> Armia Krajowa i Bataliony Chłopskie atakują ukraińskie wsie podejrzane o współpracę z UPA. Skala nieporównywalna z działaniami UPA, jednak skierowana również w cywilów.</p>
+  </div>
+
+  <div class="timeline-item zb-pl">
+    <div class="timeline-date">Marzec 1944 - Sahryń <span class="tag zb-pl">💀 zbrodnia PL</span></div>
+    <p>Odwetowa akcja AK i BCh na wsi Sahryń (zamieszkałej przez Ukraińców). Ofiary: ok. 200–1000 (szacunki historyków różnią się znacznie). Zbrodnia na cywilach - nie do zaakceptowania bez względu na kontekst.</p>
+    <div class="opinion-block">
+      <span class="opinion-label">▶ Moja Opinia</span>
+      Tych zbrodni nie można przypisywać całej formacji AK. Nie była to działalność totalna ani główny cel organizacji - dopuściły się jej lokalne oddziały, działające poza duchem i literą rozkazów. AK miała formalny zapis zakazujący ataków na ludność cywilną - co oznacza, że Sahryń był złamaniem prawa Państwa Podziemnego, nie jego realizacją. Kontrowersyjne jest jednak to, że dowódcy odpowiedzialni za te rozkazy nie zostali pociągnięci do odpowiedzialności, oczywiście jeżeli w ogóle było to znane na wyższych szczeblach.
+    </div>
+  </div>
+
+  <div class="timeline-item zb-ua">
+    <div class="timeline-date">1943–1944 - Galicja Wschodnia <span class="tag zb-ua">💀 zbrodnia UA</span></div>
+    <p>UPA przenosi działania na Galicję Wschodnią - kontynuacja mordów przy rosnącym oporze polskiej samoobrony.</p>
+    <div class="opinion-block">
+      <span class="opinion-label">▶ Moja Opinia</span>
+      Walka z kombatantami przyniosła UPA ok. 15 tys. strat po stronie sowieckiej, ok. 5 tys. po stronie polskiej i mniej niż 1 tys. po stronie niemieckiej. To daje do myślenia - ataki na ludność cywilną miały wyraźnie większą wagę dla dowódców UPA niż realna walka z okupantem.
+    </div>
+  </div>
+
+  <div class="timeline-item both">
+    <div class="timeline-date">Bilans 1943–1945 <span class="tag both">kontekst</span></div>
+    <p>Ok. <strong>60–100 tys. Polaków</strong> zabitych przez UPA. Ok. <strong>10–15 tys. Ukraińców</strong> zabitych w polskich akcjach odwetowych. Zdecydowana większość ofiar po obu stronach to cywile.</p>
+    <p><strong>Kontekst ataków:</strong> UPA celowo wybierała niedziele i święta religijne.</p>
+    <p><strong>Metody UPA:</strong> palenie żywcem, topienie w studniach i rzekach, zakopywanie żywcem, nabijanie na pale, wbijanie gwoździ w głowy, rozcinanie brzuchów kobiet ciężarnych, rozrywanie końmi, siekiery, piły, widły.</p>
+    <p><strong>Metody AK/BCh (akcje odwetowe):</strong> palenie ukraińskich wsi, rozstrzeliwanie, pobicia. Choć skala i systematyczność były nieporównywalne z działaniami UPA, ataki również uderzały w ludność cywilną w tym kobiety i dzieci.</p>
+    <div class="cmp-block">
+      <span class="cmp-label">▶ Porównanie - Ustasze i Serbowie (1941–1945)</span>
+      Chorwacki ruch faszystowski Ustasze, po przejęciu władzy w Niepodległym Państwie Chorwackim (NDH) w 1941 roku, przeprowadził systematyczną eksterminację Serbów, Żydów i Romów - na tym samym terytorium, w tym samym czasie co zbrodnie UPA.<br><br>
+      <b>Skala:</b> szacunki historyków: 300–800 tys. ofiar serbskich (rozbieżności między chorwackimi a serbskimi badaczami są porównywalne z polsko-ukraińskim sporem o Wołyń).<br><br>
+      <b>Metody:</b> masowe rozstrzeliwania, podcinanie gardeł specjalnymi nożami (<em>srbosjek</em>), palenie żywcem w kościołach prawosławnych, topienie w rzekach Sawa i Drina, obóz zagłady Jasenovac (ok. 80–100 tys. ofiar).<br><br>
+      <b>Kontekst:</b> jak UPA, Ustasze byli nacjonalistami dążącymi do etnicznie czystego terytorium pod osłoną niemieckiej okupacji. Część Chorwatów gloryfikowała ich jako bohaterów narodowych.<br><br>
+      <b>Chorwacja 2000-2013 - oficjalne odcięcie od dziedzictwa Ustaszy:</b><br>
+      1. W konstytucji i oficjalnej narracji państwowej umocniono ciągłość z antyfaszystowską walką z II wojny światowej, a nie z NDH. NDH zostało jednoznacznie uznane za reżim kolaboracyjny i zbrodniczy.<br>
+      2. Państwo zaczęło konsekwentnie wspierać pamięć o ofiarach obozu Jasenovac - oficjalne miejsca pamięci i rocznicowe obchody pod patronatem instytucji państwowych.<br>
+      3. W dostosowaniu do standardów UE wzmocniono zakaz propagowania faszyzmu i symboli totalitarnych, w tym ustaszowskich (egzekwowanie pozostaje nierówne).<br>
+      4. W procesie akcesyjnym do UE Chorwacja podlegała presji dotyczącej praworządności, praw mniejszości i współpracy z ICTY - co sprzyjało oficjalnemu dystansowi wobec nacjonalistycznych narracji historycznych.<br><br>
+      <em>Zbrodnie na Wołyniu nie były anomalią - były częścią szerszego europejskiego zjawiska nacjonalistycznej eksterminacji w czasie II wojny światowej.</em>
+    </div>
+  </div>
+
+  <div class="timeline-item both">
+    <div class="timeline-date">1944–1946 <span class="tag both">kontekst</span></div>
+    <p><strong>Przymusowa wymiana ludności.</strong> Ok. <strong>1,5 mln Polaków</strong> przesiedlono z Zachodniej Ukrainy do Polski (tzw. repatriacja - realnie wypędzenie). Ok. <strong>500 tys. Ukraińców</strong> przesiedlono z Polski do ZSRR.</p>
+  </div>
+
+  <div class="timeline-item prl">
+    <div class="timeline-date">1945–1947 - UPA contra PRL <span class="tag prl">kontrowersje PRL</span></div>
+    <p><strong>UPA wciąż aktywna.</strong> Po zakończeniu wojny UPA kontynuowała walkę partyzancką przeciwko jednostkom PRL i NKWD na terenie Polski południowo-wschodniej. Działania te były przez władze PRL wykorzystywane jako uzasadnienie dla Akcji Wisła.</p>
+  </div>
+
+  <div class="timeline-item prl">
+    <div class="timeline-date">1947 - Akcja Wisła <span class="tag prl">kontrowersje PRL</span></div>
+    <p>Ok. 150 tys. Ukraińców, Łemków i Bojków przymusowo przesiedlono z południowo-wschodniej Polski na ziemie zachodnie - w rozproszeniu, z celem wynarodowienia. Oficjalnie: pacyfikacja zaplecza UPA. W praktyce: zbiorowa odpowiedzialność całej ludności cywilnej.</p>
+    <div class="opinion-block">
+      <span class="opinion-label">▶ Moja Opinia</span>
+      Warto pamiętać, że PRL nie jest przez ogół Polaków uznawany za prawnego następcę II RP. Dla większości polskiego społeczeństwa - i dla polskiej tradycji prawno-państwowej - jedyną legalną kontynuacją była władza emigracyjna w Londynie. PRL był tworem narzuconym przez obcą siłę, podobnie jak rządy komunistyczne w Czechosłowacji, na Węgrzech czy w Rumunii.
+    </div>
+  </div>
+
+</div>
+
+<hr>
+
+<h2>Moja Opinia</h2>
+
+<h3>O II RP</h3>
+<p>II RP była Polską możliwą - nie idealną. Państwem odbudowanym po 123 latach rozbiorów, zszytym z trzech różnych systemów prawnych i administracyjnych, otoczonym od początku wrogimi sąsiadami. Dyskryminowała mniejszości, po 1926 roku skręciła w autorytaryzm i nigdy nie wyszła z biedy. A jednak - na tle totalitaryzmów, które ją zniszczyły - pozostawała przestrzenią, w której działała niezależna prasa, sądy i partie polityczne. To nie jest obrona jej błędów. To kontekst, bez którego ocena jest nieuczciwa.</p>
+
+<h3>O Ukraińcach pod dwiema okupacjami</h3>
+<p>Ukraińcy znaleźli się w tragicznym położeniu - między represyjną polską administracją a sowieckim ludobójstwem. Aspiracje do własnego państwa były całkowicie uzasadnione. Sięganie po współpracę z Niemcami było błędem politycznym i moralną katastrofą.</p>
+<p>Działania UPA nie były spontanicznym odwetem za lata ucisku - były planową operacją eksterminacyjną wymierzoną w cywilów. Skala i metody nie dają się usprawiedliwić żadnym kontekstem.</p>
+
+<h3>O bohaterach i zbrodniarzach</h3>
+<p>Można uznawać bohaterów własnego narodu, nie zakłamując historii. Przykład: Orlęta Lwowskie i żołnierze ZURL walczyli o to samo miasto po przeciwnych stronach - żadnej ze stron nie ujmuje to bohaterstwa. Tym bardziej nie ma potrzeby szukać bohaterów wśród sprawców zbrodni na cywilach.</p>
+
+<p class="motto">Można spierać się, że Wołyń był odwetem za lata polskiej okupacji. Można spierać się, że akcje AK były odwetem za mordy na Polakach. Jednak w obu przypadkach nasuwa się to samo pytanie: co zrobiło to dziecko? Jeżeli karane śmiercią były dzieci - to nie patrzono na winę. Odczłowieczano i mordowano dla upustu zwierzęcych emocji, które ktoś nazywał sprawiedliwością.</p>
+
+<hr>
+
+<h2>Co dalej?</h2>
+
+<p>Odbudowywanie relacji po takich doświadczeniach jest jednym z najtrudniejszych zadań, przed jakimi mogą stanąć dwa narody. Nie chodzi o zapomnienie - to byłoby niemożliwe i nieuczciwe wobec ofiar. Chodzi o coś trudniejszego: o zdolność do spojrzenia na drugiego człowieka przez mur wspomnień, krzywd i wzajemnych win. To wymaga pracy, czasu, wyrzeczeń i - przede wszystkim - woli po obu stronach. Nie ma drogi na skróty.</p>
+
+<p>Zbrodnie się stały. Nie możemy ich cofnąć, nie powinniśmy ich licytować. Najważniejsze jest upamiętnienie zwykłych ludzi - zabitych tylko dlatego, że byli w tym miejscu i mówili w innym języku. Czy naprawdę chcemy, żeby nienawiść była tym, co po sobie zostawimy?</p>
+
+<h3>Pytania, od których można zacząć - strona ukraińska</h3>
+<ul>
+  <li>Czy ukraińska tożsamość narodowa naprawdę potrzebuje UPA jako symbolu? Iwan Mazepa, Taras Szewczenko, Mychajło Hruszewski - walczyli o Ukrainę bez mordowania dzieci sąsiadów. Europa Zachodnia znalazła granicę między honorem oporu a gloryfikowaniem zbrodniarzy wojennych - czy Ukraina może zrobić to samo?</li>
+  <li>Czy wspólne miejsca pamięci i godne ekshumacje ofiar Wołynia mogłyby być pierwszym konkretnym krokiem - nie politycznym gestem, ale ludzkim minimum wobec rodzin, które do dziś nie wiedzą, gdzie leżą ich bliscy?</li>
+  <li>Czy ukraińska narracja historyczna jest w stanie przyznać, że ofiary Wołynia to nie byli "polscy ciemiężcy" - lecz zwykli ludzie, chłopi, dzieci, księża, którzy nie mieli nic wspólnego z decyzjami warszawskich polityków?</li>
+  <li>Czy Ukraina potrzebuje UPA, żeby mieć z czego być dumna? Ruś Kijowska, Kozaczyzna, Hołodomor, walka o niepodległość w 1918-1920 - ukraińska historia jest bogata i dramatyczna. Dlaczego symbolem siły i oporu miałby być akurat ten, kto mordował dzieci sąsiadów?</li>
+</ul>
+
+<h3>Pytania, od których można zacząć - strona polska</h3>
+<ul>
+  <li>Czy potrafimy mówić o II RP uczciwie - przyznając, że dyskryminowała mniejszości i była autorytarna - bez poczucia, że zdradzamy pamięć pokolenia, które ją budowało?</li>
+  <li>Czy akcje odwetowe AK i BCh na ukraińskich cywilach mogą być nazwane po imieniu - bez poczucia, że relatywizujemy zbrodnie Wołynia?</li>
+  <li>Czy jesteśmy w stanie przyznać, że niektórzy uznawani za wielkich ojców narodu podejmowali decyzje co najmniej kontrowersyjne? Piłsudski obalił demokratycznie wybrany rząd i rządził autorytarnie. Dmowski budował swoją wizję Polski na antysemityzmie i etnicznej czystości. Polityka pacyfikacji na Zachodniej Ukrainie była realizowana przez ludzi, których dziś wielbimy. Uznanie tego nie jest zdradą - jest dojrzałością.</li>
+  <li>Czy jesteśmy w stanie nazwać wprost, że hasła takie jak "Polska dla Polaków" czy "Polskie Wilno" są hasłami nacjonalistycznymi - i że powinny być potępiane, tak samo jak potępiamy nacjonalizm innych narodów? Polska tożsamość nie potrzebuje definiowania siebie przez wykluczenie.</li>
+</ul>
+
+<p><em>Lista pytań do obu stron jest niepełna - i celowo. Wierzę, że osoba wywodząca się z ukraińskiej edukacji i ukraińskiej wspólnoty przywołałaby znacznie więcej pytań do własnej strony, tak samo jak i ja mógłbym rozwinąć tę listę po naszej polskiej stronie. To, co tu zapisałem, to możliwy punkt wejścia - nie zamknięcie.</em></p>
+
+
+</body>
+</html>
