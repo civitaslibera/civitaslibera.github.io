@@ -11,121 +11,56 @@
       background: #0f0f0f;
       color: #e0e0e0;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 60px 20px;
-    }
-
-    .logo-area {
-      text-align: center;
-      margin-bottom: 20px;
+      padding: 48px 24px 80px;
+      max-width: 680px;
     }
     h1 {
-      font-size: 2.4em;
+      font-size: 2em;
       color: #c9a96e;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       font-weight: normal;
       text-transform: uppercase;
+      margin-bottom: 32px;
     }
-    .divider {
-      width: 60px;
-      height: 2px;
-      background: #7b1535;
-      margin: 16px auto 20px;
-    }
-
-    /* --- teaser --- */
-    .teaser-link {
+    .project-card {
       display: block;
       text-decoration: none;
-      max-width: 640px;
-      width: 100%;
-      margin-bottom: 16px;
+      border-left: 4px solid #7b1535;
+      padding: 14px 18px;
+      background: #141414;
+      margin-bottom: 12px;
+      transition: border-color 0.2s, background 0.2s;
     }
-    /* clip-box holds the visible scaled area */
-    .teaser-clip {
-      width: 100%;
-      padding-top: 56.25%; /* 675/1200 = 56.25% — preserves 16:9 aspect */
-      position: relative;
-      overflow: hidden;
-      border: 1px solid #1e1e1e;
-      border-bottom: 3px solid #7b1535;
-      transition: border-bottom-color 0.2s;
+    .project-card:hover {
+      border-left-color: #c9a96e;
+      background: #1a160e;
     }
-    .teaser-link:hover .teaser-clip {
-      border-bottom-color: #c9a96e;
+    .project-title {
+      font-size: 1em;
+      color: #c9a96e;
+      margin-bottom: 3px;
     }
-    .teaser-clip iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 1200px;
-      height: 675px;
-      border: none;
-      pointer-events: none;
-      /* scale from 1200px down to match container width — updated by JS */
-      transform-origin: top left;
-    }
-
-    .teaser-caption {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      max-width: 640px;
-      width: 100%;
-      margin-bottom: 36px;
-      padding: 0 2px;
-    }
-    .teaser-title {
-      font-size: 0.85em;
+    .project-desc {
+      font-size: 0.8em;
       color: #666;
       font-style: italic;
     }
-    .teaser-langs {
-      font-size: 0.7em;
-      color: #444;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
     footer {
-      margin-top: 48px;
-      font-size: 0.72em;
-      color: #2a2a2a;
+      margin-top: 60px;
+      font-size: 0.7em;
+      color: #222;
       letter-spacing: 0.08em;
-      text-align: center;
     }
   </style>
 </head>
 <body>
-  <div class="logo-area">
-    <h1>Civitas Libera</h1>
-  </div>
-  <div class="divider"></div>
+  <h1>Civitas Libera</h1>
 
-  <a class="teaser-link" href="UA-PL-Volyhn/">
-    <div class="teaser-clip">
-      <iframe id="teaser-frame" src="UA-PL-Volyhn/UA-PL-X.html" scrolling="no" tabindex="-1"></iframe>
-    </div>
+  <a class="project-card" href="UA-PL-Volyhn/">
+    <div class="project-title">Polish–Ukrainian Conflict 1918–1947</div>
+    <div class="project-desc">An honest attempt to look at both sides of a painful history.</div>
   </a>
-  <div class="teaser-caption">
-    <span class="teaser-title">Polish–Ukrainian Conflict 1918–1947</span>
-    <span class="teaser-langs">PL · ENG · UA →</span>
-  </div>
 
   <footer>civitaslibera.github.io</footer>
-
-  <script>
-    function scaleTeaser() {
-      var clip = document.querySelector('.teaser-clip');
-      var frame = document.getElementById('teaser-frame');
-      var containerW = clip.offsetWidth;
-      var scale = containerW / 1200;
-      frame.style.transform = 'scale(' + scale + ')';
-    }
-    scaleTeaser();
-    window.addEventListener('resize', scaleTeaser);
-  </script>
 </body>
 </html>
