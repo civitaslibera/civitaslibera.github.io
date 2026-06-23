@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -37,13 +37,28 @@
     .tag.zb-ua  { background: #c9a96e; color: #1a1a1a; }
     .tag.zb-pl  { background: #7b1535; }
     .tag.prl    { background: #795548; }
+    .tag.star   { background: #f1c40f; color: #1a1a1a; }
 
     .timeline-date { font-size: 0.82em; font-weight: bold; color: #555; margin-bottom: 2px; }
 
     .cmp-block { background: #f2f3f4; border-left: 3px solid #95a5a6; padding: 8px 14px; margin: 8px 0 0 0; border-radius: 0 4px 4px 0; font-size: 0.9em; }
     .opinion-block { background: #fdf5e6; border-left: 3px solid #c9a96e; padding: 8px 14px; margin: 8px 0 0 0; border-radius: 0 4px 4px 0; font-size: 0.9em; }
-    .cmp-label { font-size: 0.72em; font-weight: bold; color: #707b7c; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px; }
-    .opinion-label { font-size: 0.72em; font-weight: bold; color: #7b1535; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px; }
+    .cmp-label {
+      font-size: 0.72em; font-weight: bold; color: #707b7c;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      display: block; margin-bottom: 0; cursor: pointer;
+      list-style: none; user-select: none;
+    }
+    .cmp-label::-webkit-details-marker { display: none; }
+    details.cmp-block[open] > .cmp-label { margin-bottom: 6px; }
+    .opinion-label {
+      font-size: 0.72em; font-weight: bold; color: #7b1535;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      display: block; margin-bottom: 0; cursor: pointer;
+      list-style: none; user-select: none;
+    }
+    .opinion-label::-webkit-details-marker { display: none; }
+    details.opinion-block[open] > .opinion-label { margin-bottom: 6px; }
 
     .legenda { font-size: 0.83em; margin: 0.5em 0 1.4em; color: #444; display: flex; flex-wrap: wrap; gap: 12px; }
     .legenda-item { display: flex; align-items: center; gap: 5px; }
@@ -65,6 +80,8 @@
 
 <p>The document is deliberately simplified — some facts, contexts and events have been omitted to prevent it from becoming an encyclopedia. The goal is not to exhaust the subject, but to present a clear and accessible overview of those times.</p>
 
+<p>The document deliberately contains no footnotes or source citations. Including specific sources would open another level of dispute — about which evidence is reliable, which is biased, and which is admissible at all. Polish and Ukrainian historiographies differ not only in their assessments, but often in the very selection of facts considered certain. Rather than adjudicating that dispute, I have chosen to present a general picture — and to leave the reader to decide where to look further.</p>
+
 <p class="motto">No reparation — however great — can restore the dignity of a victim killed in a bestial manner. This is not a question of money or political gestures. The only thing we can do together is to preserve the memory of those ordinary people: their names, their places, their stories. To ensure they do not die a second time — this time in oblivion.</p>
 
 <hr>
@@ -74,6 +91,7 @@
 <div class="legenda">
   <span class="legenda-item"><span class="dot" style="background:#6c3483"></span> General context</span>
   <span class="legenda-item">💀 Atrocity</span>
+  <span class="legenda-item">★ Righteous</span>
   <b>Controversies:</b>
   <span class="legenda-item"><span class="dot" style="background:#7b1535"></span> Polish</span>
   <span class="legenda-item"><span class="dot" style="background:#c9a96e"></span> Ukrainian</span>
@@ -85,8 +103,8 @@
   <div class="timeline-item both">
     <div class="timeline-date">November 1918 – June 1919 <span class="tag both">context</span></div>
     <p><strong>Polish–Ukrainian War.</strong> Ukrainians proclaimed the Western Ukrainian People's Republic (WUPR) with Lviv as its capital. Poland won the war, taking control of Eastern Galicia and Volhynia.</p>
-    <div class="cmp-block">
-      <span class="cmp-label">▶ Ethnic composition of disputed lands (census 1910–1921)</span>
+    <details class="cmp-block">
+      <summary class="cmp-label">▶ Ethnic composition of disputed lands (census 1910–1921)</summary>
       <table>
         <tr><th>Region / Place</th><th>Poles</th><th>Ukrainians</th><th>Jews</th><th>Notes</th></tr>
         <tr><td><b>Lviv – city</b> (1910)</td><td>~51%</td><td>~19%</td><td>~28%</td><td>Polish and Jewish dominance</td></tr>
@@ -96,54 +114,63 @@
         <tr><td><b>Volhynia – towns</b> (PL census 1921)</td><td>~25%</td><td>~40%</td><td>~30%</td><td>Mixed</td></tr>
         <tr><td><b>Volhynia – countryside</b> (PL census 1921)</td><td>~12%</td><td>~75%</td><td>~8%</td><td>Overwhelming Ukrainian dominance</td></tr>
       </table>
-    </div>
-    <div class="opinion-block">
-      <span class="opinion-label">▶ My Opinion</span>
+    </details>
+    <details class="opinion-block">
+      <summary class="opinion-label">▶ My Opinion</summary>
       A consistent pattern: Poles and Jews in cities, Ukrainians in the countryside. "Whose land" depended on whether you counted the city or the village — hence the impossibility of compromise.
-    </div>
+    </details>
   </div>
 
   <div class="timeline-item both">
     <div class="timeline-date">1918–1919 <span class="tag both">💀 atrocity PL &amp; UA</span></div>
     <p><strong>Jewish pogroms during the Polish–Ukrainian War.</strong> Jews were victims of both sides of the conflict. <strong>Lviv pogrom (November 1918)</strong>: after Polish forces took Lviv, soldiers and civilians carried out a pogrom — estimates: 52–150 killed, hundreds wounded, mass looting. The pretext was accusing Jews of neutrality or sympathy with Ukrainians. On the Ukrainian side, units of Ataman Semosenko carried out pogroms in controlled towns (Proskuriv 1919 — approx. 1,500 victims). Jews were treated as outsiders by both sides — despite having lived on these lands for centuries.</p>
-    <div class="cmp-block">
-      <span class="cmp-label">▶ Comparison — pogroms during the Russian Civil War (1918–1921)</span>
+    <details class="cmp-block">
+      <summary class="cmp-label">▶ Comparison — pogroms during the Russian Civil War (1918–1921)</summary>
       The pogroms in Western Ukraine were not an exception — they were part of a wave of anti-Jewish violence sweeping the entire post-Soviet space:<br><br>
       <b>White armies (Denikin, Wrangel):</b> systematic pogroms in Ukraine in 1919, treated by some officers as part of the fight against "Jewish Bolshevism". Estimates: 50–150 thousand Jewish victims killed by White forces.<br><br>
       <b>Ukrainian warlords (Makhno, Semosenko and others):</b> pogroms in hundreds of towns; combined victims of Ukrainian forces estimated at 30–50 thousand.<br><br>
       <b>Bolsheviks:</b> officially opposed to antisemitism, however some Red Army units also carried out pogroms — on a much smaller scale.<br><br>
       The total number of Jews killed in all pogroms in 1918–1921 is estimated at <b>50–200 thousand</b> — making this period one of the greatest waves of anti-Jewish violence before the Holocaust.
-    </div>
-    <div class="opinion-block">
-      <span class="opinion-label">▶ My Opinion</span>
+    </details>
+    <details class="opinion-block">
+      <summary class="opinion-label">▶ My Opinion</summary>
       It is worth noting that both sides — Polish and Ukrainian — formally condemned these crimes. The Second Polish Republic conducted investigations into the Lviv pogrom and brought perpetrators before courts. On the Ukrainian side, Petliura himself issued orders forbidding pogroms. It is also significant that in 1921–1939 the Second Polish Republic treated anti-Jewish actions by nationalists as criminal offences — meaning the state as an institution did not discriminate against Jews at a legal level, though the same cannot be said of public sentiment and nationalist circles.
-    </div>
+    </details>
   </div>
 
   <div class="timeline-item both">
     <div class="timeline-date">April 1920 <span class="tag both">context</span></div>
-    <p><strong>Warsaw Agreement — Piłsudski–Petliura alliance.</strong> Poland recognises the Ukrainian People's Republic (UPR) of Symon Petliura in exchange for Polish control over Eastern Galicia — the UPR formally cedes the lands east of the Zbruch. Polish-Ukrainian forces take Kyiv, but the Red Army counteroffensive reaches Warsaw (August 1920).</p>
-    <div class="cmp-block">
-      <span class="cmp-label">▶ Comparison — the same dynamic, 1939</span>
+    <p><strong>Warsaw Agreement — Piłsudski–Petliura alliance.</strong> Poland recognises the Ukrainian People's Republic (UPR) of Symon Petliura and commits to military support in the fight for Ukrainian independence — in exchange the UPR formally cedes Eastern Galicia to Poland. Joint Polish-Ukrainian forces launch an offensive against the Bolsheviks and temporarily seize Kyiv (May 1920), but the Red Army counteroffensive reaches Warsaw (August 1920) and destroys the UPR.</p>
+    <details class="cmp-block">
+      <summary class="cmp-label">▶ Comparison — the same dynamic, 1939</summary>
       British and French guarantees to Poland (1939): formal military commitments without real execution — Poland alone in the face of invasion. In both cases, the smaller partner in the alliance was sacrificed for a "greater purpose".
-    </div>
-    <div class="opinion-block">
-      <span class="opinion-label">▶ My Opinion</span>
+    </details>
+    <details class="opinion-block">
+      <summary class="opinion-label">▶ My Opinion</summary>
       The UPR's cession of lands was a forced decision, not a voluntary one. Petliura had no territory, no army and no recognition from the great powers — the alliance with Poland was his only chance to return to Ukraine. The borders were meant to be a temporary matter.
-    </div>
+    </details>
   </div>
 
   <div class="timeline-item both">
-    <div class="timeline-date">March 1921 <span class="tag both">context</span></div>
+    <div class="timeline-date">October 1920 – 1922 <span class="tag both">context</span></div>
+    <p><strong>Seizure of Vilnius by the Second Polish Republic.</strong> General Lucjan Żeligowski staged a feigned "mutiny" and, on Piłsudski's orders, seized Vilnius and its surrounding territory, creating the puppet statelet of "Central Lithuania". In 1922 the area was formally incorporated into Poland following elections boycotted by Lithuanians and Jews. Lithuania treated this as an illegal occupation throughout the interwar period and maintained no diplomatic relations with Poland.</p>
+  </div>
+
+  <div class="timeline-item pl">
+    <div class="timeline-date">March 1921 <span class="tag pl">PL controversies</span></div>
     <p><strong>Treaty of Riga.</strong> Peace concluded without UPR participation, dividing Ukraine between Poland and Soviet Russia.</p>
-    <div class="cmp-block">
-      <span class="cmp-label">▶ Comparison — great powers deciding for others</span>
+    <details class="cmp-block">
+      <summary class="cmp-label">▶ Comparison — great powers deciding for others</summary>
       <b>Yalta Conference (February 1945)</b> — Roosevelt, Churchill, Stalin. Poland's borders and political system were decided without the participation of the Polish government-in-exile. Poland was shifted westward at the cost of its eastern territories.
-    </div>
-    <div class="opinion-block">
-      <span class="opinion-label">▶ My Opinion</span>
+    </details>
+    <details class="opinion-block">
+      <summary class="opinion-label">▶ My Opinion</summary>
       As a Pole I understand that feeling — we ourselves feel betrayed by the decisions made at Yalta in 1945, where the great powers decided Poland's fate without the Poles. Ukrainians in 1921 must have felt exactly the same: their destiny was settled at a table at which they had no seat.
-    </div>
+    </details>
+    <details class="opinion-block">
+      <summary class="opinion-label">▶ Additional Opinion</summary>
+      The Second Polish Republic was also demonstrating its intention to expand its influence despite the opposition of local nationalities.
+    </details>
   </div>
 
   <div class="timeline-item pl">
@@ -162,14 +189,14 @@
       <li><strong>Right-wing governments 1922–1926.</strong> Successive cabinets led increasingly restrictive policies toward minorities. The culmination was the <strong>Grabski Act (1924)</strong> — drastic reduction of Ukrainian-language schools and their replacement with "utraquist" schools, effectively meaning the Polonisation of education.</li>
       <li><strong>May Coup (1926).</strong> Józef Piłsudski overthrew the democratically elected government and introduced an authoritarian system. His policies toward minorities were more pragmatic than those of the nationalist right — however, he did not abolish the discriminatory practices in Western Ukraine.</li>
     </ul>
-    <div class="cmp-block">
-      <span class="cmp-label">▶ Comparison — Bolsheviks toward Ukrainians (1920s)</span>
+    <details class="cmp-block">
+      <summary class="cmp-label">▶ Comparison — Bolsheviks toward Ukrainians (1920s)</summary>
       At the same time, on the other side of the border, the Bolsheviks pursued a policy of <strong>Ukrainisation (korenizatsiya, 1923–1933)</strong> — actively promoting the Ukrainian language in schools, administration, culture and media. Ukrainian became the official language of Soviet Ukraine.
-    </div>
-    <div class="opinion-block">
-      <span class="opinion-label">▶ My Opinion</span>
+    </details>
+    <details class="opinion-block">
+      <summary class="opinion-label">▶ My Opinion</summary>
       Ukrainian grievances here are entirely understandable — what Poles were doing in Western Ukraine, Poles themselves had experienced under partitions as Germanisation and Russification. We knew exactly how it felt, and we did the same thing. In retrospect, Soviet tolerance was performative — a tool to draw Ukrainians into power structures, not genuine recognition of their rights.
-    </div>
+    </details>
   </div>
 
   <div class="timeline-item ua">
@@ -181,17 +208,28 @@
       <li>Political assassinations 1921–1939 — over <strong>60 confirmed attacks and assassination attempts</strong> on Polish officials, police and activists</li>
       <li>Raids on post offices and banks (funding activities) — several dozen documented operations</li>
     </ul>
-    <div class="cmp-block">
-      <span class="cmp-label">▶ Comparison — radicalisation of nationalism on both sides</span>
+    <details class="cmp-block">
+      <summary class="cmp-label">▶ Comparison — radicalisation of nationalism on both sides</summary>
       During the same period, analogous extreme movements were forming on the Polish side:<br><br>
       <b>Camp of Great Poland (OWP, 1926)</b> — Roman Dmowski, integral nationalism, antisemitism, vision of an ethnically homogeneous Poland.<br><br>
       <b>National Radical Camp (ONR, 1934)</b> — more radical, modelled on Italian and German fascism. Attacks on Jews, the slogan "Poland for Poles".<br><br>
       <em>Context: the 1920s and 30s were a period of radicalisation across all of Europe — NSDAP, Italian fascists, Spanish Falange. Both OUN and ONR were children of the same era, not anomalies.</em>
-    </div>
-    <div class="opinion-block">
-      <span class="opinion-label">▶ My Opinion</span>
+    </details>
+    <details class="opinion-block">
+      <summary class="opinion-label">▶ My Opinion</summary>
       Resistance to subjugation is natural and justified. It is worth noting, however, that OUN's activities in this period were directed primarily at functionaries — officials, police, politicians — not at the civilian population.
-    </div>
+    </details>
+  </div>
+
+  <div class="timeline-item ua">
+    <div class="timeline-date">1922 <span class="tag ua">UA controversies</span></div>
+    <p><strong>Sydir Tverdokhlib</strong> — Ukrainian poet, journalist and public activist, murdered by UVO.</p>
+    <ul>
+      <li>He studied at <strong>Lviv University</strong> and worked for the development of Ukrainian culture and national life.</li>
+      <li>He was associated with the <strong>Ukrainian Peasant (Agrarian) Party</strong> and supported Ukrainian participation in the Polish political system.</li>
+      <li>In <strong>1922</strong> he stood as a candidate in elections to the Polish Sejm despite the boycott declared by some Ukrainian groups.</li>
+      <li><strong>15 October 1922</strong> he was shot by members of <strong>UVO</strong>.</li>
+    </ul>
   </div>
 
   <div class="timeline-item pl">
@@ -205,10 +243,10 @@
       <li>Confiscation of livestock: horses, cattle, grain</li>
       <li>Deaths: <strong>several to a dozen or so</strong> (Polish and Ukrainian sources differ significantly)</li>
     </ul>
-    <div class="opinion-block">
-      <span class="opinion-label">▶ My Opinion</span>
+    <details class="opinion-block">
+      <summary class="opinion-label">▶ My Opinion</summary>
       The Pacification was a political move that revealed the weakness of the Second Polish Republic more than its strength. Resorting to collective reprisals without a legal basis, directed at entire villages rather than specific perpetrators, was an admission of inability to solve the problem through the rule of law.
-    </div>
+    </details>
   </div>
 
   <div class="timeline-item ua">
@@ -218,28 +256,28 @@
       <li><strong>1931 — Tadeusz Hołówko</strong> (MP, advocate of Polish–Ukrainian dialogue) — shot in Truskavets. Paradoxically, OUN eliminated one of the few Poles open to compromise.</li>
       <li><strong>1934 — Bronisław Pieracki</strong> (Minister of the Interior) — shot in Warsaw. The assassination was the direct impulse for the creation of the Bereza Kartuska detention camp.</li>
     </ul>
-    <div class="opinion-block">
-      <span class="opinion-label">▶ My Opinion</span>
+    <details class="opinion-block">
+      <summary class="opinion-label">▶ My Opinion</summary>
       The murder of Hołówko made no sense to me. He was one of the very few high-ranking Polish politicians genuinely working toward Polish–Ukrainian reconciliation. OUN eliminated one of their potential allies on the Polish side.
-    </div>
+    </details>
   </div>
 
   <div class="timeline-item pl">
     <div class="timeline-date">1934–1939 <span class="tag pl">PL controversies</span></div>
     <p><strong>Bereza Kartuska.</strong> The only internment camp of the Second Polish Republic, established after the Pieracki assassination. Nationalists (OUN, ONR), communists and political opponents were interned without trial. A total of approx. 3–3.5 thousand prisoners; mortality: 13–30 persons (~0.5%).</p>
-    <div class="cmp-block">
-      <span class="cmp-label">▶ Comparison — Gulag (USSR)</span>
+    <details class="cmp-block">
+      <summary class="cmp-label">▶ Comparison — Gulag (USSR)</summary>
       <table>
         <tr><th></th><th>Bereza Kartuska (Second Polish Republic)</th><th>Gulag (USSR)</th></tr>
         <tr><td>Total prisoners</td><td>~3–3.5 thousand</td><td>~18–20 million</td></tr>
         <tr><td>Mortality</td><td>13–30 persons (~0.5%)</td><td>1.5–2.5 million (7–15%)</td></tr>
         <tr><td>Composition</td><td>Poles, Ukrainians, Belarusians, Jews, Germans, Lithuanians</td><td>Russians, Ukrainians, Belarusians and others</td></tr>
       </table>
-    </div>
-    <div class="opinion-block">
-      <span class="opinion-label">▶ My Opinion</span>
+    </details>
+    <details class="opinion-block">
+      <summary class="opinion-label">▶ My Opinion</summary>
       Bereza is further evidence of the state's weakness in the face of nationalist movements. Instead of effective integration policies or law enforcement through courts, the Second Polish Republic resorted to internment without trial. Compared to the Gulag the scale is incomparable, but the principle is the same: isolation of political opponents outside the framework of law.
-    </div>
+    </details>
   </div>
 
   <div class="timeline-item both">
@@ -250,20 +288,53 @@
   <div class="timeline-item both">
     <div class="timeline-date">17 September 1939 – 1941 <span class="tag both">context</span></div>
     <p><strong>First Soviet occupation.</strong> The USSR enters Western Ukraine. Mass deportations of the Polish population into the USSR (approx. 320–400 thousand people). Some Ukrainians welcomed the Soviets with relief — which entrenched memories of mutual grievances on both sides. Just like the Polish elite, the Ukrainian elite was systematically liquidated by the NKVD — arrests, executions and deportations affected Ukrainian activists, teachers, clergy and intelligentsia.</p>
-    <div class="opinion-block">
-      <span class="opinion-label">▶ My Opinion</span>
+    <details class="opinion-block">
+      <summary class="opinion-label">▶ My Opinion</summary>
       The satisfaction of some Ukrainians with the Soviet entry likely stemmed from their experience of the Polish system — after years of Polonisation and discrimination, any change might have seemed better. The Soviets brought not freedom — but a different kind of subjugation.
-    </div>
+    </details>
+  </div>
+
+  <div class="timeline-item both">
+    <div class="timeline-date">April–May 1940 <span class="tag both">💀 atrocity (USSR)</span></div>
+    <p><strong>Katyn Massacre.</strong> On Stalin's and the Politburo's orders, the NKVD murdered approx. <strong>22,000 Polish officers, police officers, civil servants, engineers and members of the intelligentsia</strong> — prisoners of war and political prisoners held in camps since September 1939. The executions were carried out with a shot to the back of the head at three main locations: Katyn (a forest near Smolensk), Kharkiv and Kalinin (Tver), and the bodies were buried in mass graves. The victims were the elite of the Second Polish Republic — this was a deliberate target: the elimination of the future leadership of the Polish state.</p>
+    <p>The USSR denied responsibility for over half a century, blaming Germany. Only in 1990 did Gorbachev officially acknowledge that the order had been issued by the Soviet Politburo. Russia has never classified this crime as genocide.</p>
+  </div>
+
+  <div class="timeline-item both">
+    <div class="timeline-date">June–July 1941 <span class="tag both">💀 atrocity (USSR)</span></div>
+    <p><strong>NKVD murders in prisons of Western Ukraine and the Borderlands.</strong> When the Wehrmacht attacked the USSR (22 June 1941) and the front moved rapidly eastward, the NKVD carried out mass murders of prisoners held in Soviet prisons in Western Ukraine, Eastern Galicia and the Borderlands — to prevent them from being liberated by the Germans. Estimates: approx. <strong>20,000–30,000 victims</strong> within a matter of days.</p>
+    <ul>
+      <li><strong>Lviv:</strong> prisons on Łąckiego and Zamarstynowska Streets — several thousand killed, bodies discovered by advancing Germans and civilians.</li>
+      <li><strong>Zolochiv, Sambir, Stanyslaviv, Lutsk, Dubno</strong> — analogous murders in local prisons.</li>
+      <li>Among the victims: Poles, Ukrainians, Jews, Belarusians — political and criminal prisoners without distinction.</li>
+    </ul>
+  </div>
+
+  <div class="timeline-item ua">
+    <div class="timeline-date">1940–1941 <span class="tag ua">UA controversies</span></div>
+    <p><strong>OUN split and ideological radicalisation.</strong> In February 1940 OUN split into two factions: <strong>OUN-M</strong> (Andriy Melnyk, moderate line) and <strong>OUN-B</strong> (Stepan Bandera, radical line). OUN-B under Bandera's leadership adopted a far more aggressive political doctrine, including a formal distinction between "friendly" and "hostile" population groups.</p>
+    <p>In OUN-B documents and rhetoric, the groups classified as <strong>hostile</strong> — treated as an obstacle to the creation of an independent Ukrainian state — included:</p>
+    <ul>
+      <li><strong>Poles</strong> — as historical oppressors and colonisers of Ukrainian lands</li>
+      <li><strong>Russians</strong> — as representatives of Soviet imperialism</li>
+      <li><strong>Jews</strong> — through adoption of antisemitic narratives</li>
+      <li><strong>Ukrainians</strong> — as "traitors to the national cause" and opponents of OUN-B's line, e.g. persons helping Poles.</li>
+    </ul>
+    <p><strong>Quotes from OUN-B documents:</strong></p>
+    <ul>
+      <li><em>"Our rule will be terrible for our enemies. Terror against foreign enemies and our traitors."</em></li>
+      <li><em>"Muscovites, Poles, Jews and other enemies of Ukraine…"</em></li>
+    </ul>
   </div>
 
   <div class="timeline-item zb-ua">
     <div class="timeline-date">1941 <span class="tag zb-ua">💀 UA atrocity</span></div>
-    <p><strong>OUN and the Germans — pogroms.</strong> Bandera proclaimed Ukrainian independence in Lviv on 30 June 1941; the Germans rejected it and arrested him. Part of OUN nonetheless participated in Jewish pogroms (Lviv 1941) and served in auxiliary police. The Ukrainian 14th Waffen-SS Division "Galicia" fought on the German side.</p>
-    <div class="cmp-block">
-      <span class="cmp-label">▶ Comparison — other "independences" under German patronage</span>
+    <p><strong>OUN and the Germans — pogroms.</strong> Yaroslav Stetsko proclaimed Ukrainian independence in Lviv on 30 June 1941; the Germans rejected it and arrested him. Part of OUN nonetheless participated in Jewish pogroms (Lviv 1941) and served in auxiliary police. The Ukrainian 14th Waffen-SS Division "Galicia" fought on the German side.</p>
+    <details class="cmp-block">
+      <summary class="cmp-label">▶ Comparison — other "independences" under German patronage</summary>
       <b>Slovakia (from March 1939):</b> the government of Jozef Tiso — Slovakia deported its own Jews to extermination camps. <em>Assessment: a puppet state, not sovereign.</em><br><br>
       <b>Croatia — NDH (from April 1941):</b> the Ustasha in power — territory divided between German and Italian spheres of influence. <em>Assessment: a puppet state, not sovereign.</em>
-    </div>
+    </details>
   </div>
 
   <div class="timeline-item zb-ua">
@@ -272,17 +343,34 @@
   </div>
 
   <div class="timeline-item zb-ua">
-    <div class="timeline-date">11 July 1943 — Bloody Sunday <span class="tag zb-ua">💀 UA atrocity</span></div>
-    <p>Simultaneous attacks on approx. 167 localities during Sunday masses. Estimates: <strong>5–8 thousand victims in one day.</strong></p>
-    <div class="opinion-block">
-      <span class="opinion-label">▶ My Opinion</span>
-      I consider the UPA campaign to have been systematic and planned, not spontaneous. The attacks covered many villages simultaneously across a vast area. They lasted for months. If they had arisen purely from accumulated hatred and emotion, why did they not erupt earlier — under Polish rule, when Ukrainian grievances were fresh? The campaign launched at a moment when the Second Polish Republic no longer existed, Germany and the Soviets were bleeding each other, and Volhynia was a land without any real sovereign. This was a political and military calculation, not an eruption of rage. The absence of a document ordering extermination does not mean the absence of a decision.
-    </div>
+    <div class="timeline-date">June–July 1943 <span class="tag zb-ua">💀 UA atrocity</span></div>
+    <p><strong>Zygmunt Rumel — emissary of peace.</strong> A Pole closely connected to Volhynia and an advocate of Polish–Ukrainian reconciliation. Sent by the AK in early July 1943 as an emissary to negotiate with UPA in order to limit the conflict. He was murdered by a UPA unit on 6 July 1943 — torn apart by horses.</p>
   </div>
 
   <div class="timeline-item zb-ua">
-    <div class="timeline-date">Summer–Autumn 1943 <span class="tag zb-ua">💀 UA atrocity</span></div>
+    <div class="timeline-date">11 July 1943 — Bloody Sunday <span class="tag zb-ua">💀 UA atrocity</span></div>
+    <p>Simultaneous attacks on approx. 167 localities during Sunday masses. Estimates: <strong>5–8 thousand victims in one day.</strong></p>
+    <details class="opinion-block">
+      <summary class="opinion-label">▶ My Opinion</summary>
+      I consider the UPA campaign to have been systematic and planned, not spontaneous. The attacks covered many villages simultaneously across a vast area. They lasted for months. If they had arisen purely from accumulated hatred and emotion, why did they not erupt earlier — under Polish rule, when Ukrainian grievances were fresh? The campaign launched at a moment when the Second Polish Republic no longer existed, Germany and the Soviets were bleeding each other, and Volhynia was a land without any real sovereign. This was a political and military calculation, not an eruption of rage. The absence of a document ordering extermination does not mean the absence of a decision.
+    </details>
+  </div>
+
+  <div class="timeline-item zb-ua">
+    <div class="timeline-date">Summer–Autumn 1943 <span class="tag zb-ua">💀 UA atrocity</span> <span class="tag ua">UA controversies</span></div>
     <p>Systematic "cleansing" of Volhynia — UPA attacks successive villages and towns. Survivors flee to cities or form self-defence units.</p>
+    <p><strong>UPA leaflets for the Polish population.</strong> Alongside the attacks, UPA distributed leaflets addressed to Poles living in Volhynia and Eastern Galicia. The content revolved around several recurring elements:</p>
+    <ul>
+      <li><strong>Demand to leave "Ukrainian lands"</strong> — Poles presented as intruders who must immediately leave territories described as ancient Ukrainian land.</li>
+      <li><strong>Coloniser narrative</strong> — Poles described as colonisers and occupiers who had unlawfully seized Ukrainian land and lived at the expense of the Ukrainian people.</li>
+      <li><strong>Warnings about the consequences of staying</strong> — leaflets explicitly stated that those who did not leave the designated areas within a set deadline would be treated as enemies and would face the consequences.</li>
+    </ul>
+    <p>One of the preserved quotes from UPA leaflets reads: <em>"Drive out the Poles from Ukrainian lands..."</em></p>
+    <details class="opinion-block">
+      <summary class="opinion-label">▶ Opinion</summary>
+      If the leaflet campaign was conducted solely by UPA — and there is no reason to believe otherwise — I consider it additional evidence of the systematic character of the ethnic cleansing. A leaflet requires a decision, editing, printing, and distribution. This is not a spontaneous outburst of anger — it is the organisation's official stance towards the Polish civilian population, expressed in writing.<br><br>
+      On the other hand, looking at the history of this type of propaganda, I cannot help but think of the Germans as possible initiators or at least inspirers — the Germans were masters of instrumentally fanning ethnic antagonisms in occupied territories. I am unable, however, to find any concrete information confirming such a link, and I do not wish to suggest it without a basis. Perhaps this was simply UPA's own initiative, modelled on the rhetoric that hung in the air all across Europe at the time.
+    </details>
   </div>
 
   <div class="timeline-item zb-pl">
@@ -293,19 +381,19 @@
   <div class="timeline-item zb-pl">
     <div class="timeline-date">March 1944 — Sahryń <span class="tag zb-pl">💀 PL atrocity</span></div>
     <p>A reprisal operation by the AK and BCh against the village of Sahryń (inhabited by Ukrainians). Victims: approx. 200–1,000 (historians' estimates vary significantly). A crime against civilians — unacceptable regardless of context.</p>
-    <div class="opinion-block">
-      <span class="opinion-label">▶ My Opinion</span>
+    <details class="opinion-block">
+      <summary class="opinion-label">▶ My Opinion</summary>
       These crimes cannot be attributed to the entire AK formation. The AK had a formal rule forbidding attacks on civilians — which means Sahryń was a violation of the Underground State's own law, not its implementation.
-    </div>
+    </details>
   </div>
 
   <div class="timeline-item zb-ua">
     <div class="timeline-date">1943–1944 — Eastern Galicia <span class="tag zb-ua">💀 UA atrocity</span></div>
     <p>UPA extends operations to Eastern Galicia — continuation of murders amid growing resistance from Polish self-defence units.</p>
-    <div class="opinion-block">
-      <span class="opinion-label">▶ My Opinion</span>
+    <details class="opinion-block">
+      <summary class="opinion-label">▶ My Opinion</summary>
       The fighting against combatants cost UPA approx. 15,000 casualties on the Soviet side, approx. 5,000 on the Polish side, and fewer than 1,000 on the German side. This gives pause for thought — attacks on the civilian population were clearly of greater priority to UPA commanders than actual combat against the occupier.
-    </div>
+    </details>
   </div>
 
   <div class="timeline-item both">
@@ -314,15 +402,32 @@
     <p><strong>Context of attacks:</strong> UPA deliberately chose Sundays and religious holidays.</p>
     <p><strong>UPA methods:</strong> burning alive, drowning in wells and rivers, burying alive, impalement, nailing heads, disembowelling pregnant women, dismemberment by horses, axes, saws, pitchforks.</p>
     <p><strong>AK/BCh methods (reprisal operations):</strong> burning Ukrainian villages, shootings, beatings. Although the scale and systematicity were incomparable to UPA's actions, the attacks also struck civilians, including women and children.</p>
-    <div class="cmp-block">
-      <span class="cmp-label">▶ Comparison — Ustasha and Serbs (1941–1945)</span>
+    <details class="cmp-block">
+      <summary class="cmp-label">▶ Comparison — Ustasha and Serbs (1941–1945)</summary>
       The Croatian fascist movement Ustasha carried out systematic extermination of Serbs, Jews and Roma in the Independent State of Croatia (NDH) in 1941 — on the same territory, at the same time as UPA's crimes.<br><br>
       <b>Scale:</b> 300–800 thousand Serbian victims.<br><br>
       <b>Methods:</b> mass shootings, throat-cutting with special knives (<em>srbosjek</em>), burning alive in Orthodox churches, Jasenovac extermination camp (approx. 80–100 thousand victims).<br><br>
       <b>Context:</b> like UPA, the Ustasha were nationalists seeking an ethnically pure territory under the cover of German occupation.<br><br>
       <b>Croatia 2000–2013 — official rejection of the Ustasha legacy:</b> NDH was unambiguously recognised as a collaborationist and criminal regime. The state supported memory of Jasenovac victims. In the EU accession process, Croatia was subject to pressure regarding minority rights and cooperation with ICTY.<br><br>
       <em>The crimes in Volhynia were not an anomaly — they were part of a broader European phenomenon of nationalist extermination during the Second World War.</em>
-    </div>
+    </details>
+    <details class="cmp-block">
+      <summary class="cmp-label">▶ Comparison — Lithuanians and Poles (1944)</summary>
+      <b>Mutual Polish-Lithuanian murders in the Vilnius region.</b> In 1944 the Vilnius region became an arena of mutual murders between the Polish civilian population and AK partisans on one side, and Lithuanian auxiliary police and civilians on the other.<br><br>
+      <b>Glinciszki (20 June 1944) — the largest massacre of Poles.</b> A Lithuanian auxiliary police unit (<em>Ypatingasis būrys</em>) shot <strong>39 Polish civilians</strong> — men, women and children — in retaliation for earlier losses in clashes with the AK.<br><br>
+      <b>Dubingiai/Dubinki (23 June 1944) — AK response.</b> Three days after Glinciszki, AK units carried out a retaliatory operation on the Lithuanian village of Dubingiai, killing <strong>approx. 27–65 Lithuanian civilians</strong> (Polish sources give the lower figure, Lithuanian sources the higher), including women and children. The victims were mostly unarmed residents — not the perpetrators of the earlier crime.<br><br>
+      <b>Civilian casualty balance:</b>
+      <ul>
+        <li>Polish civilians killed by Lithuanian auxiliary police units (in collaboration with Germans): approx. <strong>300–500 people</strong> in 1941–1944.</li>
+        <li>Lithuanian civilians killed by AK units: approx. <strong>100–200 people</strong>.</li>
+      </ul>
+      There is a fundamental legal distinction: neither side classifies these events as genocide. The intent to systematically exterminate a nationality is absent — the murders were retaliatory and situational, not a plan for ethnic cleansing. This distinguishes them fundamentally from UPA's planned extermination on Volhynia.
+    </details>
+  </div>
+
+  <div class="timeline-item ua">
+    <div class="timeline-date">1943–1945 <span class="tag ua">★ righteous UA</span></div>
+    <p><strong>Ukrainian neighbours:</strong> one person could save 1–10 people; unfortunately most of those who helped have not been identified.</p>
   </div>
 
   <div class="timeline-item both">
@@ -335,13 +440,24 @@
     <p><strong>UPA still active.</strong> After the end of the war, UPA continued partisan warfare against PPR and NKVD units in south-eastern Poland. These activities were used by the PPR authorities as justification for Operation Vistula.</p>
   </div>
 
+  <div class="timeline-item zb-pl">
+    <div class="timeline-date">1945–1947 — Józef Kuraś "Ogień" <span class="tag zb-pl">💀 PL atrocity</span></div>
+    <p><strong>Józef Kuraś "Ogień"</strong> — a Podhale partisan commander, AK and NSZ veteran, who after the war continued armed resistance against the PPR apparatus and NKVD in the Podhale and Sądecczyzna regions. He operated officially as an anti-communist cursed soldier.</p>
+    <p>Total number of victims of his units: approx. <strong>200 people</strong>, of whom nearly half were civilian — mostly Poles and Slovaks living in the border region. Among documented crimes: murders of civilians suspected of collaborating with communists or deemed enemies on the basis of informants' reports, robberies and pacification of villages on both sides of the border.</p>
+    <p>Kuraś was killed in February 1947, surrounded in a manhunt by the PPR security apparatus.</p>
+    <details class="opinion-block">
+      <summary class="opinion-label">▶ Opinion</summary>
+      Kuraś is a figure who divides Polish historical memory. Fighting against communist occupation was justified and honourable — but the approx. 100 civilian victims, including Poles and Slovaks who cannot be called collaborators, constitute a crime that must be named plainly. Heroism toward the enemy does not erase crimes against the innocent. Treating him solely as a symbol of resistance without accounting for this aspect of his activities is the same error we attribute to the Ukrainian side in the case of UPA.
+    </details>
+  </div>
+
   <div class="timeline-item prl">
     <div class="timeline-date">1947 — Operation Vistula <span class="tag prl">PPR controversies</span></div>
     <p>Approx. 150,000 Ukrainians, Lemkos and Boyko were forcibly resettled from south-eastern Poland to the western territories — dispersed, with the aim of denationalisation. Official justification: pacification of UPA's rear base. In practice: collective punishment of the entire civilian population.</p>
-    <div class="opinion-block">
-      <span class="opinion-label">▶ My Opinion</span>
+    <details class="opinion-block">
+      <summary class="opinion-label">▶ My Opinion</summary>
       It is worth remembering that the PPR is not regarded by most Poles as the legal successor to the Second Polish Republic. The PPR was a creation imposed by a foreign power, just like the communist governments in Czechoslovakia, Hungary or Romania.
-    </div>
+    </details>
   </div>
 
 </div>
