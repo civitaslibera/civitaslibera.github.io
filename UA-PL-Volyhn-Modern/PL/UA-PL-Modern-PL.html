@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konflikt polsko-ukraiński we współczesności (1991–dziś)</title>
+  <style>
+    body { font-family: Georgia, serif; max-width: 860px; margin: 40px auto; padding: 0 20px; line-height: 1.7; color: #1a1a1a; }
+    h1 { font-size: 1.6em; border-bottom: 2px solid #7b1535; padding-bottom: 8px; }
+    h2 { font-size: 1.2em; margin-top: 2em; color: #222; border-left: 4px solid #7b1535; padding-left: 10px; }
+    h3 { font-size: 1em; margin-top: 1.4em; color: #444; }
+    em { font-style: italic; }
+    table { border-collapse: collapse; width: 100%; margin: 0.6em 0; font-size: 0.9em; }
+    td, th { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+    th { background: #eee; }
+
+    /* ── OŚ CZASU ─────────────────────────────── */
+    .timeline { position: relative; padding-left: 28px; border-left: 3px solid #ccc; margin: 1.2em 0; }
+    .timeline-item { position: relative; margin-bottom: 1.4em; }
+    .timeline-item::before {
+      content: '';
+      position: absolute; left: -36px; top: 6px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: #888; border: 2px solid #fff; box-shadow: 0 0 0 2px #888;
+    }
+    .timeline-item.both::before  { background: #3b6ea5; box-shadow: 0 0 0 2px #3b6ea5; }
+    .timeline-item.third::before { background: #6c3483; box-shadow: 0 0 0 2px #6c3483; }
+    .timeline-item.pl::before    { background: #7b1535; box-shadow: 0 0 0 2px #7b1535; }
+    .timeline-item.ua::before    { background: #c9a96e; box-shadow: 0 0 0 2px #c9a96e; }
+
+    .timeline-item > summary {
+      list-style: none; cursor: pointer; user-select: none; display: block; color: #1a1a1a;
+    }
+    .timeline-item > summary::-webkit-details-marker { display: none; }
+    .timeline-item[open] > summary { margin-bottom: 6px; }
+    .timeline-item p { color: #333; font-size: 0.95em; }
+
+    /* ── ZNACZNIKI ─────────────────────────────── */
+    .tag { display: inline-block; font-size: 0.72em; padding: 1px 7px; border-radius: 10px; color: #fff; margin-left: 6px; vertical-align: middle; }
+    .tag.both  { background: #3b6ea5; }
+    .tag.third { background: #6c3483; }
+    .tag.pl    { background: #7b1535; }
+    .tag.ua    { background: #c9a96e; color: #1a1a1a; }
+
+    .timeline-date { font-size: 0.82em; font-weight: bold; color: #555; margin-bottom: 2px; }
+
+    /* ── LEGENDA ──────────────────────────────── */
+    .legenda { font-size: 0.83em; margin: 0.5em 0 1.4em; color: #444; display: flex; flex-wrap: wrap; gap: 12px; }
+    .legenda-item { display: flex; align-items: center; gap: 5px; }
+    .dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+
+    /* ── TABELA EKSHUMACJI ──────────────────────── */
+    .exh-note { color: #333; font-size: 0.95em; line-height: 1.7; margin: 0 0 14px; }
+    .exh-table-wrap {
+      overflow-x: auto;
+      border: 1px solid #ddd;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0.6em 0;
+      box-sizing: border-box;
+      padding: 0 20px;
+    }
+    .exh-table { width: 100%; min-width: 900px; border-collapse: collapse; font-size: 0.82em; margin: 0; }
+    .exh-table th, .exh-table td { padding: 7px 9px; border: 1px solid #ddd; text-align: left; vertical-align: top; }
+    .exh-table thead th {
+      background: #eee; color: #222; font-weight: bold;
+      text-transform: uppercase; font-size: 0.85em; letter-spacing: 0.03em;
+      position: sticky; top: 0;
+    }
+    .exh-table tbody tr.pl    { background: rgba(123, 21, 53, 0.06); }
+    .exh-table tbody tr.ua    { background: rgba(201, 169, 110, 0.16); }
+    .exh-table tbody tr.third { background: rgba(108, 52, 131, 0.07); }
+    .exh-table tbody tr.pl    td:first-child { border-left: 4px solid #7b1535; }
+    .exh-table tbody tr.ua    td:first-child { border-left: 4px solid #c9a96e; }
+    .exh-table tbody tr.third td:first-child { border-left: 4px solid #6c3483; }
+
+    .wstat { display: inline-block; padding: 2px 9px; border-radius: 10px; font-size: 0.85em; font-weight: bold; color: #fff; white-space: nowrap; }
+    .wstat-done     { background: #3d8b57; }
+    .wstat-progress { background: #3b6ea5; }
+    .wstat-blocked  { background: #a13d3d; }
+    .wstat-stalled  { background: #c9822e; }
+  </style>
+</head>
+<body>
+
+  <h1>Konflikt polsko-ukraiński we współczesności (1991–dziś)</h1>
+
+  <h2>Wprowadzenie</h2>
+
+  <p class="exh-note">Oba państwa pokazują, że kwestie historyczne stają się priorytetami politycznymi zwłaszcza wtedy, gdy zyskują szersze zainteresowanie opinii publicznej, co sugeruje, że kalkulacje polityczne, względy wewnętrzne i oczekiwania społeczne mogą czasem wpływać na podejście równolegle z autentycznym dążeniem do sprawiedliwości i pojednania.</p>
+  <p class="exh-note">Po stronie polskiej tę dynamikę można zaobserwować w znaczącej luce czasowej między wczesnym okresem po odzyskaniu niepodległości a szerszym uznaniem rzezi wołyńskiej po publikacji prac Władysława i Ewy Siemaszków w 2000 roku. Ograniczona uwaga instytucjonalna w latach 1992–2000 rodzi pytania, czy kwestie historyczne otrzymują trwałą uwagę państwa przede wszystkim wtedy, gdy stają się politycznie istotne i widoczne publicznie.</p>
+  <p class="exh-note">Podobny wzorzec można zaobserwować po stronie ukraińskiej w stosunkowo niedawnym podejściu do niektórych historycznych wniosków ekshumacyjnych. Ograniczone postępy w poprzednich dekadach, po których nastąpiła wznowiona aktywność w konkretnych okolicznościach, rodzą pytania, czy praktyczna współpraca jest prowadzona konsekwentnie, czy też staje się bardziej prawdopodobna wtedy, gdy pojawia się wyraźna korzyść polityczna lub szerszy interes strategiczny.</p>
+  <p class="exh-note">Jednocześnie Ukraina nadal promuje elementy narodowej narracji historycznej, w której postacie i organizacje związane z Organizacją Ukraińskich Nacjonalistów (OUN-B) oraz Ukraińską Powstańczą Armią (UPA) są często przedstawiane przede wszystkim jako symbole walki narodowej, podczas gdy bardziej krytyczna analiza zbrodni popełnionych przez te organizacje pozostaje ograniczona i politycznie wrażliwa. Pozostaje to jedną z najbardziej dzielących kwestii historycznych między Polską a Ukrainą i nadal przyciąga krytykę niektórych zewnętrznych obserwatorów, którzy podkreślają znaczenie konfrontacji z trudnymi i kontrowersyjnymi aspektami historii narodowej.</p>
+  <p class="exh-note">W tym sensie problem nie polega jedynie na tym, czy odpowiedzialność historyczna jest uznawana, lecz na tym, czy rządy są gotowe działać, gdy wiąże się to raczej z kosztami politycznymi niż z korzyściami politycznymi. Wzorzec obserwowany po obu stronach sugeruje, że gdy kwestie historyczne nie przynoszą bezpośredniej korzyści politycznej, cierpienie ofiar może stać się sprawą drugorzędną wobec kalkulacji politycznych. W rezultacie ofiary i ich rodziny narażone są na zaniedbanie przez te same państwa, które twierdzą, że strzegą ich pamięci historycznej. Interesy polityczne mogą brać górę nad pamięcią i sprawiedliwością, pozostawiając nierozwiązane tragedie na uboczu przez lata i sprawiając, że potrzeby ofiar stają się podporządkowane bieżącym celom państwowym.</p>
+  <p class="exh-note">Ostatecznie tragedia polega na tym, że polityczne spory po obu stronach nadal rozwijają się wokół pamięci ofiar potwornych zbrodni. Zamiast pozwolić, by prawda historyczna i pamięć stały się fundamentem pojednania, cierpienie przeszłości zbyt często zamienia się w narzędzie współczesnego konfliktu politycznego. Gdy pamięć historyczna staje się przede wszystkim kwestią interesów narodowych, a nie zobowiązaniem wobec prawdy i godności ofiar, pojednanie staje się znacznie trudniejsze.</p>
+
+  <h2>Główne wydarzenia (1997–dziś)</h2>
+
+  <div class="legenda">
+    <span class="legenda-item"><span class="dot" style="background:#c9a96e"></span> Ukraina</span>
+    <span class="legenda-item"><span class="dot" style="background:#7b1535"></span> Polska</span>
+    <span class="legenda-item"><span class="dot" style="background:#3b6ea5"></span> Wspólne</span>
+    <span class="legenda-item"><span class="dot" style="background:#6c3483"></span> Strony trzecie</span>
+  </div>
+
+  <div class="timeline">
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">21 maja 1997 <span class="tag both">Wspólne</span></div>
+      ▶ <strong>Wspólna deklaracja „O porozumieniu i pojednaniu”</strong>
+    </summary>
+    <p>Prezydenci Aleksander Kwaśniewski i Leonid Kuczma podpisują w Kijowie dokument wzywający do wzajemnego przebaczenia dawnych krzywd i dialogu opartego na prawdzie historycznej.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">2000 <span class="tag third">Strony trzecie</span></div>
+      ▶ <strong>Monografia Siemaszków</strong>
+    </summary>
+    <p>Publikacja dwutomowego dzieła Władysława i Ewy Siemaszków <em>„Ludobójstwo dokonane przez nacjonalistów ukraińskich na ludności polskiej Wołynia 1939–1945”</em> staje się kluczowym punktem odniesienia dla polskich badań nad skalą zbrodni (ok. 60 000 ofiar na samym Wołyniu).</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">2000 <span class="tag third">Strony trzecie</span></div>
+      ▶ <strong>Badanie sympatii na Ukrainie</strong>
+    </summary>
+    <p>Sondaż przeprowadzony na Ukrainie wykazał, że Polacy zajęli trzecie miejsce w hierarchii sympatii narodowych, za Białorusią (1. miejsce) i Rosją (2. miejsce).</p>
+  </details>
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">11 lipca 2003 <span class="tag both">Wspólne</span></div>
+      ▶ <strong>Obchody 60. rocznicy w Pawliwce</strong>
+    </summary>
+    <p>Prezydenci Kwaśniewski i Kuczma odsłaniają pomnik pojednania w Pawliwce; prezydent Polski wprost nazwał wydarzenia ludobójstwem, podczas gdy strona ukraińska podtrzymywała narrację o „symetrii win”.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">11 lipca 2003 <span class="tag third">Strony trzecie</span></div>
+      ▶ <strong>Badanie CBOS o wiedzy Polaków</strong>
+    </summary>
+    <p>Przeprowadzony w tym samym czasie sondaż CBOS wykazał, że 44% Polaków nie potrafiło wskazać ani ofiar, ani sprawców rzezi wołyńskiej.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">12 października 2007 <span class="tag ua">Ukraina</span></div>
+      ▶ <strong>Roman Szuchewycz ogłoszony Bohaterem Ukrainy</strong>
+    </summary>
+    <p>Prezydent Wiktor Juszczenko pośmiertnie odznacza dowódcę UPA, wywołując ostre protesty w Polsce z powodu jego roli w rzezi wołyńskiej.</p>
+  </details>
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">28 lutego 2009 <span class="tag both">Wspólne</span></div>
+      ▶ <strong>Wspólne obchody w Hucie Pieniackiej</strong>
+    </summary>
+    <p>Prezydenci Lech Kaczyński i Wiktor Juszczenko oddają hołd Polakom zamordowanym przez ukraińskie oddziały, choć w przemówieniach unika się słowa „ludobójstwo”.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">15 lipca 2009 <span class="tag pl">Polska</span></div>
+      ▶ <strong>Uchwała Sejmu o „znamionach ludobójstwa”</strong>
+    </summary>
+    <p>Polski parlament przyjmuje przez aklamację dokument określający zbrodnię wołyńską jako mord o charakterze czystki etnicznej noszący znamiona ludobójstwa.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">2008 <span class="tag third">Strony trzecie</span></div>
+      ▶ <strong>Pogłębiający się kryzys wiedzy w Polsce</strong>
+    </summary>
+    <p>Kolejny sondaż CBOS pokazuje pogarszającą się świadomość historyczną: 54% Polaków nie wiedziało już, kto był ofiarą rzezi wołyńskiej, a 57% nie znało sprawców.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">22 stycznia 2010 <span class="tag ua">Ukraina</span></div>
+      ▶ <strong>Stepan Bandera ogłoszony Bohaterem Ukrainy</strong>
+    </summary>
+    <p>Kontrowersyjna decyzja prezydenta Juszczenki o odznaczeniu przywódcy OUN wywołuje konsternację i oficjalne protesty polskich władz.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">25 lutego 2010 <span class="tag third">Strony trzecie</span></div>
+      ▶ <strong>Rezolucja Parlamentu Europejskiego w sprawie Bandery</strong>
+    </summary>
+    <p>Europosłowie wyrażają ubolewanie z powodu nadania Banderze tytułu bohatera narodowego i wzywają nowe władze Ukrainy do cofnięcia decyzji w imię wartości europejskich.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">2 kwietnia 2011 <span class="tag ua">Ukraina</span></div>
+      ▶ <strong>Ukraiński sąd uchyla tytuły Bohatera Ukrainy</strong>
+    </summary>
+    <p>Naczelny Sąd Administracyjny Ukrainy utrzymuje w mocy unieważnienie dekretów Juszczenki dotyczących Bandery i Szuchewycza, co tymczasowo łagodzi spór dyplomatyczny.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">11 lipca 2013 <span class="tag pl">Polska</span></div>
+      ▶ <strong>70. rocznica i uznanie „szczególnego okrucieństwa”</strong>
+    </summary>
+    <p>Sejm i Senat przyjmują uchwały określające zbrodnię jako „czystkę etniczną noszącą znamiona ludobójstwa”, po raz pierwszy wspominając o szczególnym okrucieństwie sprawców.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">9 kwietnia 2015 <span class="tag ua">Ukraina</span></div>
+      ▶ <strong>Ukraińska ustawa przyznaje status kombatanta OUN-UPA</strong>
+    </summary>
+    <p>Rada Najwyższa przyznaje status kombatanta członkom OUN i UPA oraz zakazuje kwestionowania zasadności ich walki, zaledwie kilka godzin po pojednawczym przemówieniu prezydenta Komorowskiego w Kijowie — odebranym w Polsce jako policzek.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">8 lipca 2016 <span class="tag ua">Ukraina</span></div>
+      ▶ <strong>Symboliczny gest prezydenta Poroszenki w Warszawie</strong>
+    </summary>
+    <p>Prezydent Ukrainy klęka przed pomnikiem ofiar rzezi wołyńskiej na warszawskim Żoliborzu — jeden z najważniejszych, choć mało nagłośnionych, gestów pojednania.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">22 lipca 2016 <span class="tag pl">Polska</span></div>
+      ▶ <strong>Ustanowienie Narodowego Dnia Pamięci Ofiar Ludobójstwa</strong>
+    </summary>
+    <p>Sejm ustanawia 11 lipca dniem pamięci ofiar zbrodni popełnionych przez ukraińskich nacjonalistów, co spotyka się z „głębokim zaniepokojeniem” ukraińskiego parlamentu.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">7 października 2016 <span class="tag third">Strony trzecie</span></div>
+      ▶ <strong>Premiera filmu Wojciecha Smarzowskiego „Wołyń”</strong>
+    </summary>
+    <p>Film wywołuje ogromną reakcję opinii publicznej w Polsce i zostaje zakazany na Ukrainie, pogłębiając wzajemne postrzeganie tej historii.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">20 października 2016 <span class="tag third">Strony trzecie</span></div>
+      ▶ <strong>Wspólna Deklaracja Pamięci i Solidarności</strong>
+    </summary>
+    <p>Parlamenty Polski, Ukrainy i Litwy wspólnie potępiają reżimy totalitarne i obarczają ZSRR odpowiedzialnością za wybuch II wojny światowej.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">Kwiecień 2017 <span class="tag pl">Polska</span></div>
+      ▶ <strong>Demontaż pomnika UPA w Hruszowicach</strong>
+    </summary>
+    <p>Pomnik czczący bojowników UPA, wzniesiony w Hruszowicach w 1994 roku i od dawna określany przez polskie władze jako samowola, zostaje rozebrany przez lokalne władze polskie. Ukraina twierdzi, że pod pomnikiem pochowani byli bojownicy UPA.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">Kwiecień 2017 <span class="tag ua">Ukraina</span></div>
+      ▶ <strong>Ukraińskie moratorium na ekshumacje</strong>
+    </summary>
+    <p>W odpowiedzi na rozbiórkę pomnika w Hruszowicach Kijów wstrzymuje prace poszukiwawcze i ekshumacyjne dla polskich specjalistów.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">26 stycznia 2018 <span class="tag pl">Polska</span></div>
+      ▶ <strong>Spór o znowelizowaną ustawę o IPN</strong>
+    </summary>
+    <p>Wprowadzenie przepisów o „zbrodniach ukraińskich nacjonalistów” prowadzi do ostrego kryzysu dyplomatycznego i zawieszenia Polsko-Ukraińskiego Forum Historyków, choć część przepisów zostaje później uznana za nieprecyzyjne.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">Czerwiec 2018 <span class="tag pl">Polska</span></div>
+      ▶ <strong>Zniesienie sankcji karnych w ustawie o IPN</strong>
+    </summary>
+    <p>Pod znaczącą presją dyplomatyczną Ukrainy, Izraela i Stanów Zjednoczonych Polska znosi sankcje karne wprowadzone nowelizacją ze stycznia 2018 roku, choć odpowiedzialność cywilna za negowanie zbrodni pozostaje możliwa.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">2018 <span class="tag pl">Polska</span></div>
+      ▶ <strong>Badania archeologiczne IPN w Hruszowicach</strong>
+    </summary>
+    <p>Instytut Pamięci Narodowej prowadzi badania archeologiczne na terenie dawnego pomnika i stwierdza brak dowodów na istnienie grobów UPA w tym dokładnym miejscu, osłabiając ukraiński argument, że pomnik bezpośrednio chronił miejsce pochówku.</p>
+  </details>
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">8 lipca 2018 <span class="tag both">Wspólne</span></div>
+      ▶ <strong>Osobne obchody 75. rocznicy</strong>
+    </summary>
+    <p>Prezydent Duda uczestniczy w uroczystościach w Łucku, podczas gdy prezydent Poroszenko bierze udział w wydarzeniach w Sahryniu w tym samym czasie, co obnaża brak wspólnej wizji rocznicy.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">Luty 2019 <span class="tag third">Strony trzecie</span></div>
+      ▶ <strong>Badanie CBOS o sympatii do Ukraińców</strong>
+    </summary>
+    <p>Po okresie napięć odnotowano wzrost polskiej sympatii wobec Ukraińców (31% wobec 24% rok wcześniej), co wiązano ze złagodzeniem retoryki historycznej.</p>
+  </details>
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">19–21 stycznia 2022 <span class="tag both">Wspólne</span></div>
+      ▶ <strong>Rozmowy w Wiśle i „taktyczny rozejm”</strong>
+    </summary>
+    <p>Prezydenci Duda i Zełenski uzgadniają, że Polska powstrzyma się od potępiania całego ukraińskiego ruchu narodowego w zamian za ograniczenie kultu sprawców rzezi wołyńskiej (Szuchewycz, Sawur).</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">2022 <span class="tag third">Strony trzecie</span></div>
+      ▶ <strong>Unijne „korytarze solidarnościowe” dla ukraińskiego zboża</strong>
+    </summary>
+    <p>Po lutowej inwazji Rosji w 2022 roku rosyjskie blokady morskie i ataki zakłócają czarnomorskie szlaki eksportu zboża z Ukrainy. UE ustanawia „korytarze solidarnościowe”, aby pomóc Ukrainie eksportować produkty rolne przez kraje sąsiednie, w tym Polskę. Większość zboża miała trafiać dalej do Afryki i na Bliski Wschód, ale część pozostała w Polsce i innych krajach sąsiednich z powodu problemów logistycznych.</p>
+  </details>
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">Przełom 2022/2023 <span class="tag both">Wspólne</span></div>
+      ▶ <strong>Narastające napięcia wśród rolników z powodu ukraińskiego zboża</strong>
+    </summary>
+    <p>Polscy rolnicy skarżą się, że ukraińskie zboże obniża lokalne ceny, argumentując, że niższe koszty produkcji na Ukrainie uniemożliwiają im sprzedaż własnych plonów z zyskiem; rząd znajduje się pod rosnącą presją społeczności wiejskich przed wyborami parlamentarnymi w 2023 roku. Polska twierdzi, że otworzyła swój rynek, by pomóc Ukrainie, ale ochrona polskiego rolnictwa stała się teraz konieczna, podczas gdy Ukraina argumentuje, że eksport zboża jest niezbędny dla jej gospodarki i przetrwania w czasie wojny, a ograniczenia postrzega jako szkodzące jednemu z głównych źródeł jej dochodów.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">Luty 2023 <span class="tag ua">Ukraina</span></div>
+      ▶ <strong>Kontrowersyjne nadanie imienia Szuchewycza jednostce wojskowej</strong>
+    </summary>
+    <p>Nadanie 10. Brygadzie Szturmowej Górskiej nazwy „Edelweiss” wywołuje w Polsce negatywne skojarzenia historyczne i rodzi pytania o ciągłość z formacjami kolaboracyjnymi.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">Kwiecień 2023 <span class="tag pl">Polska</span></div>
+      ▶ <strong>Polska wprowadza zakaz importu ukraińskiego zboża</strong>
+    </summary>
+    <p>Polska ogłasza zakaz importu ukraińskiego zboża i kilku innych produktów rolnych; Węgry i inne kraje sąsiednie wprowadzają podobne środki. Komisja Europejska początkowo krytykuje jednostronne zakazy krajowe, ponieważ polityka handlowa leży w gestii UE.</p>
+  </details>
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">5 kwietnia 2023 <span class="tag both">Wspólne</span></div>
+      ▶ <strong>Zełenski odznaczony Orderem Orła Białego</strong>
+    </summary>
+    <p>Wołodymyr Zełenski otrzymuje najwyższe odznaczenie państwowe Polski, Order Orła Białego, podczas oficjalnej wizyty w Polsce.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">Maj 2023 <span class="tag third">Strony trzecie</span></div>
+      ▶ <strong>Badanie CBOS o oczekiwanych przeprosinach</strong>
+    </summary>
+    <p>Sondaż CBOS wykazuje, że 78% Polaków uważa, iż prezydent Zełenski powinien przeprosić za Wołyń, a 72% jednoznacznie określa te wydarzenia jako ludobójstwo.</p>
+  </details>
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">Maj 2023 <span class="tag both">Wspólne</span></div>
+      ▶ <strong>Wymiana dyplomatyczna w sprawie przeprosin</strong>
+    </summary>
+    <p>Sugestia rzecznika polskiego MSZ Łukasza Jasiny, że Ukraina powinna przeprosić, zostaje nazwana przez ukraińskiego ambasadora Wasyla Zwarycza „niedopuszczalną i niefortunną”.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">Maj–wrzesień 2023 <span class="tag third">Strony trzecie</span></div>
+      ▶ <strong>Kompromis UE w sprawie tymczasowych ograniczeń zbożowych</strong>
+    </summary>
+    <p>Komisja Europejska wprowadza tymczasowe ograniczenia importu ukraińskiej pszenicy, kukurydzy, rzepaku i nasion słonecznika do Polski, Bułgarii, Węgier, Rumunii i Słowacji, przy czym tranzyt przez te kraje pozostaje możliwy; celem jest zmniejszenie presji na rynki lokalne przy zachowaniu ukraińskich szlaków eksportowych.</p>
+  </details>
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">9 lipca 2023 <span class="tag both">Wspólne</span></div>
+      ▶ <strong>Wspólna modlitwa w katedrze w Łucku</strong>
+    </summary>
+    <p>W 80. rocznicę prezydenci Duda i Zełenski uczestniczą w ekumenicznym nabożeństwie ku czci „niewinnych ofiar Wołynia”.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">Lipiec 2023 <span class="tag pl">Polska</span></div>
+      ▶ <strong>Spór o odznaczenia i „widłowa polityka”</strong>
+    </summary>
+    <p>Podczas obchodów 80. rocznicy prezydent Duda krytykuje środowiska domagające się radykalnych działań, wywołując ostry spór ze środowiskami kresowymi; w debacie parlamentarnej pojawiają się także polityczne wezwania do odebrania Zełenskiemu Orderu Orła Białego.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">11 lipca 2023 <span class="tag pl">Polska</span></div>
+      ▶ <strong>Jednomyślna uchwała Sejmu z okazji 80. rocznicy</strong>
+    </summary>
+    <p>Polski parlament wzywa Ukrainę do uznania winy, podkreślając, że pojednanie musi obejmować ekshumację wszystkich ofiar zbrodni, i pięciokrotnie używa słowa „ludobójstwo”.</p>
+  </details>
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">Wrzesień 2023 <span class="tag both">Wspólne</span></div>
+      ▶ <strong>Odmowa przedłużenia zakazu; Ukraina składa skargę do WTO</strong>
+    </summary>
+    <p>Komisja Europejska postanawia nie przedłużać tymczasowych ograniczeń, ale Polska, Węgry i Słowacja utrzymują własne krajowe zakazy importu ukraińskiego zboża. Ukraina odpowiada, składając skargę do Światowej Organizacji Handlu przeciwko Polsce i pozostałym krajom. Polska argumentuje, że broni swoich rolników, natomiast Ukraina twierdzi, że Polska, mimo bycia sojusznikiem, ogranicza kluczowy sektor eksportu w czasie wojny.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">Wrzesień 2023 <span class="tag third">Strony trzecie</span></div>
+      ▶ <strong>Skandal w kanadyjskim parlamencie</strong>
+    </summary>
+    <p>Uhonorowanie weterana SS Galizien Jarosława Hunki wywołuje międzynarodowe potępienie, w tym ze strony Polski i organizacji żydowskich, i przypomina o nierozliczonej roli ukraińskich formacji kolaboracyjnych.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">2024 <span class="tag third">Strony trzecie</span></div>
+      ▶ <strong>Gwałtowny spadek sympatii Ukraińców do Polaków</strong>
+    </summary>
+    <p>Sondaż opinii publicznej odnotowuje spadek pozytywnego nastawienia Ukraińców do Polaków z 83% w 2022 roku do 41% w 2024 roku, co przypisuje się głównie „kryzysowi zbożowemu” i blokadom granicznym.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">2024 <span class="tag third">Strony trzecie</span></div>
+      ▶ <strong>Ukraińskie badanie na temat ekshumacji</strong>
+    </summary>
+    <p>Tylko jedna trzecia ankietowanych Ukraińców popiera bezwarunkowe odblokowanie prac ekshumacyjnych, a 40% uważa, że powinno być ono uzależnione od spełnienia przez Polskę określonych warunków.</p>
+  </details>
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">26 listopada 2024 <span class="tag both">Wspólne</span></div>
+      ▶ <strong>Deklaracja Sikorski–Sybiha w Warszawie</strong>
+    </summary>
+    <p>Ministrowie spraw zagranicznych oświadczają, że nie ma formalnych przeszkód dla ekshumacji, i wyrażają gotowość powołania wspólnej grupy roboczej historyków.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">11 lipca 2025 <span class="tag pl">Polska</span></div>
+      ▶ <strong>Pierwsze oficjalne obchody państwowe na mocy nowej ustawy</strong>
+    </summary>
+    <p>Polska upamiętnia ofiary rzezi wołyńskiej na podstawie ustawy podpisanej przez prezydenta w czerwcu 2025 roku.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">12 lipca 2025 <span class="tag pl">Polska</span></div>
+      ▶ <strong>Nawrocki wzywa do pełnych ekshumacji w Chełmie</strong>
+    </summary>
+    <p>Prezydent-elekt Karol Nawrocki wzywa do przeprowadzenia pełnych ekshumacji podczas obchodów w Chełmie, twierdząc, że prawda historyczna jest warunkiem prawdziwego partnerstwa wobec rosyjskiego neoimperializmu.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">16 lipca 2025 <span class="tag third">Strony trzecie</span></div>
+      ▶ <strong>Zapowiedź platformy historyków Trójkąta Lubelskiego</strong>
+    </summary>
+    <p>W ramach Trójkąta Lubelskiego zapowiedziano nową platformę dla historyków, mającą ułatwić badania i dialog na temat spornych kwestii historycznych.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">Marzec 2026 <span class="tag ua">Ukraina</span></div>
+      ▶ <strong>Oficjalna struktura robocza do opracowania projektu</strong>
+    </summary>
+    <p>Odbywa się spotkanie na wysokim szczeblu — Biura Prezydenckiego, parlamentu, rządu i historyków — poświęcone opracowaniu projektu. Wyraźnie uwzględniono w nim postacie związane z OUN.</p>
+  </details>
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">Maj 2026 <span class="tag both">Wspólne</span></div>
+      ▶ <strong>Duża polsko-ukraińska konferencja historyczna</strong>
+    </summary>
+    <p>Inicjatywa ma na celu stworzenie stałej, profesjonalnej platformy dialogu między ekspertami z obu krajów, niezależnej od bieżących cykli politycznych. Nie osiągnięto istotnych ustaleń, a polski IPN nie został włączony do rozmów.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">Maj 2026 <span class="tag ua">Ukraina</span></div>
+      ▶ <strong>Ponowny pochówek Andrija Melnyka</strong>
+    </summary>
+    <p>Ukraina przeprowadza ponowny pochówek Andrija Melnyka, przywódcy OUN-M, i jego żony na Narodowym Wojskowym Cmentarzu Pamięci.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">26 maja 2026 <span class="tag ua">Ukraina</span></div>
+      ▶ <strong>Jednostka wojskowa nazwana „Bohaterowie UPA”</strong>
+    </summary>
+    <p>Prezydent Zełenski oficjalnie nadaje ukraińskiej jednostce wojskowej honorową nazwę „Bohaterowie UPA”.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">29 maja 2026 <span class="tag pl">Polska</span></div>
+      ▶ <strong>Nawrocki zapowiada zamiar odebrania odznaczenia</strong>
+    </summary>
+    <p>Wysocy przedstawiciele polskich władz i instytucji reagują publicznie: prezydent Karol Nawrocki zapowiada, że będzie dążył do odebrania Zełenskiemu wcześniej przyznanego Orderu Orła Białego.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">19 czerwca 2026 <span class="tag pl">Polska</span></div>
+      ▶ <strong>Zełenski pozbawiony Orderu Orła Białego</strong>
+    </summary>
+    <p>Polska odbiera Wołodymyrowi Zełenskiemu Order Orła Białego, odznaczenie otrzymane podczas jego wizyty w kwietniu 2023 roku.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">20 czerwca 2026 <span class="tag ua">Ukraina</span></div>
+      ▶ <strong>Zełenski odsyła order przez Nową Pocztę</strong>
+    </summary>
+    <p>Zełenski odsyła Order Orła Białego prezydentowi Nawrockiemu za pośrednictwem zwykłej firmy kurierskiej Nowa Poczta, co jest odbierane jako poważny afront dyplomatyczny.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">20 czerwca 2026 <span class="tag ua">Ukraina</span></div>
+      ▶ <strong>Masowe oddawanie polskich odznaczeń w geście solidarności</strong>
+    </summary>
+    <p>Znane postaci ukraińskiego życia publicznego, w tym byli prezydenci Kuczma, Juszczenko i Poroszenko, a także Kyryło Budanow, zapowiadają, że zrzekną się polskich odznaczeń państwowych w geście solidarności z Zełenskim.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">25–26 czerwca 2026 <span class="tag ua">Ukraina</span></div>
+      ▶ <strong>Zełenski nie przybywa na Konferencję Odbudowy Ukrainy w Gdańsku</strong>
+    </summary>
+    <p>Zełenski odmawia udziału w Konferencji Odbudowy Ukrainy w Gdańsku, wysyłając zamiast siebie delegację niższego szczebla pod przewodnictwem premiera.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">28 czerwca 2026 <span class="tag ua">Ukraina</span></div>
+      ▶ <strong>Złożono projekt ustawy o Ukraińskim Panteonie Narodowym</strong>
+    </summary>
+    <p>Do parlamentu wpływa projekt ustawy o Ukraińskim Panteonie Narodowym.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">30 czerwca 2026 <span class="tag pl">Polska</span></div>
+      ▶ <strong>Polskie ostrzeżenia w sprawie akcesji Ukrainy do UE</strong>
+    </summary>
+    <p>Urzędnicy sugerują, że członkostwo Ukrainy może zostać zablokowane, dopóki „kult Bandery” i prawda o Wołyniu nie zostaną rozliczone zgodnie z wartościami europejskimi.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">Lipiec 2026 <span class="tag ua">Ukraina</span></div>
+      ▶ <strong>Rada Najwyższa ustanawia Panteon</strong>
+    </summary>
+    <p>Rada Najwyższa przyjmuje ustawę ustanawiającą Panteon jako państwowy system pamięci w Kijowie.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">8 lipca 2026 <span class="tag third">Strony trzecie</span></div>
+      ▶ <strong>Rezolucja UE krytykuje ukraińską politykę historyczną</strong>
+    </summary>
+    <p>Unia Europejska wydaje rezolucję/oświadczenie krytykujące politykę historyczną Ukrainy, w tym podejście do rzezi wołyńskiej i upamiętnianie postaci OUN-UPA.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">Lipiec 2026 <span class="tag ua">Ukraina</span></div>
+      ▶ <strong>Budanow: Ukraina nie przyjmie ultimatum od nikogo</strong>
+    </summary>
+    <p>„Ukraina nie przyjmie ultimatum od nikogo na tym świecie. Ostatnio to Rosja próbowała postawić nam ultimatum. Bez urazy wobec Polski, ale jest ona nieco potężniejsza niż Polska, a my i tak go nie przyjęliśmy” — mówi szef Biura Prezydenta Ukrainy Kyryło Budanow.</p>
+  </details>
+
+  </div>
+
+  <h2>Paradoks ekshumacji</h2>
+
+  <p class="exh-note">Dane ujawniają niepokojący paradoks: Ukraina potrafi sprawnie współpracować z Niemcami w sprawach historycznych, jednocześnie wielokrotnie opóźniając i utrudniając prace ekshumacyjne żądane przez Polskę. Różnica ta zdaje się nie wynikać z braku możliwości, lecz z priorytetów. Ten kontrast sugeruje, że ekshumacje dotyczące polskich ofiar stały się w mniejszym stopniu kwestią procedury administracyjnej, a w większym — kwestią woli politycznej.</p>
+  <p class="exh-note">Niekiedy opóźnienia te tłumaczy się rzekomymi problemami proceduralnymi, względami bezpieczeństwa lub potencjalnym ryzykiem związanym z planowanymi pracami. Takie wyjaśnienia wydają się jednak niespójne w zestawieniu ze współpracą Ukrainy z Niemcami w podobnych sprawach historycznych, gdzie przeszkody te nie wydają się blokować postępu. Rodzi to obawy, że argumenty proceduralne lub bezpieczeństwa mogą być czasem stosowane wybiórczo, a nie stanowić rzeczywiste bariery.</p>
+  <p class="exh-note">Wątpliwości budzi także zatwierdzanie niektórych miejsc prac wykopaliskowych. W niektórych przypadkach zgody ograniczają się do lokalizacji już znanych i udokumentowanych lub do obszarów, w których związek z rzezią wołyńską jest niejasny lub pośredni. Sprawia to wrażenie, że wybór zatwierdzonych miejsc nie zawsze odzwierciedla kompleksowe dążenie do zidentyfikowania i zbadania miejsc pochówku polskich ofiar, lecz raczej bardziej ograniczone podejście, które zawęża zakres wyjaśnienia historycznego.</p>
+
+  <h2>Umowy i prace ekshumacyjne (1992–2026)</h2>
+
+  <div class="exh-table-wrap">
+    <table class="exh-table">
+      <thead>
+        <tr>
+          <th>Rok</th>
+          <th>Strona składająca wniosek</th>
+          <th>Strona akceptująca</th>
+          <th>Finansowanie</th>
+          <th>Status prac</th>
+          <th>Miejsca</th>
+          <th>Uwagi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="pl">
+          <td>1992</td><td><span class="tag pl">Polska</span></td><td>Ukraina</td>
+          <td>Polskie – państwowe</td>
+          <td><span class="wstat wstat-done">Zakończone</span></td><td>2/2</td>
+          <td>Zgoda na 4 miejsca; ekshumacje w Ostrówkach i Woli Ostrowieckiej (324 ofiary).</td>
+        </tr>
+        <tr class="third">
+          <td>1993</td><td><span class="tag third">Niemcy (Volksbund)</span></td><td>Ukraina (władze lokalne)</td>
+          <td>Niemieckie – prywatne</td>
+          <td><span class="wstat wstat-progress">W toku</span></td><td>Konsolidacja</td>
+          <td>Rozpoczęcie konsolidacji grobów polowych z myślą o przyszłym cmentarzu w Potylczu.</td>
+        </tr>
+        <tr class="pl">
+          <td>1996</td><td><span class="tag pl">Polska (prywatnie)</span></td><td>Ukraina</td>
+          <td>Polskie – prywatne</td>
+          <td><span class="wstat wstat-done">Zakończone</span></td><td>3/3</td>
+          <td>Prywatna ekshumacja trzech grobów zbiorowych w Lityniu (17 osób).</td>
+        </tr>
+        <tr class="third">
+          <td>1996</td><td><span class="tag third">Niemcy (rząd federalny)</span></td><td>Ukraina (rząd)</td>
+          <td>Niemieckie – państwowe</td>
+          <td><span class="wstat wstat-done">Zakończone</span></td><td>-</td>
+          <td>Podpisano umowę o grobach wojennych; poświęcono cmentarz w Kijowie (Głewacha) z udziałem Helmuta Kohla.</td>
+        </tr>
+        <tr class="third">
+          <td>1998</td><td><span class="tag third">Niemcy (Volksbund)</span></td><td>Ukraina (region)</td>
+          <td>Niemieckie – prywatne</td>
+          <td><span class="wstat wstat-done">Zakończone</span></td><td>-</td>
+          <td>Oficjalne poświęcenie zbiorowych cmentarzy wojskowych w Charkowie i Potylczu.</td>
+        </tr>
+        <tr class="third">
+          <td>2000</td><td><span class="tag third">Niemcy (Volksbund)</span></td><td>Ukraina (region)</td>
+          <td>Niemieckie – prywatne</td>
+          <td><span class="wstat wstat-done">Zakończone</span></td><td>-</td>
+          <td>Poświęcenie zbiorowego cmentarza w Krzemieńczuku na podarowanej ziemi.</td>
+        </tr>
+        <tr class="third">
+          <td>2001</td><td><span class="tag third">Niemcy (Volksbund)</span></td><td>Ukraina (region)</td>
+          <td>Niemieckie – prywatne</td>
+          <td><span class="wstat wstat-done">Zakończone</span></td><td>-</td>
+          <td>Poświęcenie cmentarza Sewastopol-Gonczarne na Krymie.</td>
+        </tr>
+        <tr class="pl">
+          <td>2001–2002</td><td><span class="tag pl">Polska</span></td><td>Ukraina</td>
+          <td>Polskie – państwowe</td>
+          <td><span class="wstat wstat-done">Zakończone</span></td><td>2/2</td>
+          <td>Pawliwka (Poryck) i Radowicze – odnalezienie i pochówek ofiar.</td>
+        </tr>
+        <tr class="pl">
+          <td>2011</td><td><span class="tag pl">Polska (ROPWiM)</span></td><td>Ukraina</td>
+          <td>Polskie – państwowe</td>
+          <td><span class="wstat wstat-done">Zakończone</span></td><td>2/2</td>
+          <td>Powtórne prace w Ostrówkach i Woli Ostrowieckiej (317 ofiar).</td>
+        </tr>
+        <tr class="pl">
+          <td>2013</td><td><span class="tag pl">Polska</span></td><td>Ukraina</td>
+          <td>Polskie – państwowe</td>
+          <td><span class="wstat wstat-done">Zakończone</span></td><td>1/1</td>
+          <td>Ekshumacja ok. 80 osób we wsi Gaj.</td>
+        </tr>
+        <tr class="third">
+          <td>2012</td><td><span class="tag third">Niemcy (Volksbund)</span></td><td>Ukraina</td>
+          <td>Niemieckie – państwowe</td>
+          <td><span class="wstat wstat-done">Zakończone</span></td><td>-</td>
+          <td>Bilans: ponad 134 000 niemieckich żołnierzy przeniesionych na cmentarze zbiorowe do końca 2012 roku.</td>
+        </tr>
+        <tr class="third">
+          <td>2014</td><td><span class="tag third">Niemcy (Volksbund)</span></td><td>Rosja (de facto)</td>
+          <td>Niemieckie – prywatne</td>
+          <td><span class="wstat wstat-blocked">Zablokowane</span></td><td>Krym</td>
+          <td>Po aneksji prace w Gonczarnem ograniczają się do niepublicznych „ekshumacji awaryjnych”.</td>
+        </tr>
+        <tr class="pl">
+          <td>2017 (luty)</td><td><span class="tag pl">Polska (IPN)</span></td><td>Ukraina</td>
+          <td>Nieprzyznane</td>
+          <td><span class="wstat wstat-blocked">Zablokowane</span></td><td>0/11</td>
+          <td>Pierwszy wniosek IPN (5 miejsc poszukiwań, 6 ekshumacji). Blokada.</td>
+        </tr>
+        <tr class="pl">
+          <td>2018 (maj)</td><td><span class="tag pl">Polska (IPN)</span></td><td>Ukraina</td>
+          <td>Nieprzyznane</td>
+          <td><span class="wstat wstat-blocked">Zablokowane</span></td><td>0/11</td>
+          <td>Wniosek dotyczący 11 lokalizacji (w tym Huta Pieniacka, Tynne). Brak odpowiedzi.</td>
+        </tr>
+        <tr class="pl">
+          <td>2019 (wrzesień)</td><td><span class="tag pl">Polska (IPN)</span></td><td>Ukraina</td>
+          <td>Polskie – państwowe</td>
+          <td><span class="wstat wstat-blocked">Częściowo zablokowane</span></td><td>2/13</td>
+          <td>Zgoda na poszukiwania w 2 z 13 miejsc (Lwów-Zboiska i Hołosko) – głównie wojskowi.</td>
+        </tr>
+        <tr class="pl">
+          <td>2020 (luty)</td><td><span class="tag pl">Polska (IPN)</span></td><td>Ukraina</td>
+          <td>Nieprzyznane</td>
+          <td><span class="wstat wstat-blocked">Zablokowane</span></td><td>0/14</td>
+          <td>Ponowienie wniosku dla 13 lokalizacji i nowy wniosek dla Kropiwnik. Brak rozpatrzenia.</td>
+        </tr>
+        <tr class="pl">
+          <td>2021 (październik)</td><td><span class="tag pl">Polska (IPN)</span></td><td>Ukraina</td>
+          <td>Polskie – państwowe</td>
+          <td><span class="wstat wstat-stalled">Wstrzymane</span></td><td>0/1</td>
+          <td>Udział w pracach w Odessie. Wstrzymane wskutek rosyjskiej inwazji.</td>
+        </tr>
+        <tr class="pl">
+          <td>2022 (czerwiec)</td><td><span class="tag pl">Polska (WiD*)</span></td><td>Ukraina</td>
+          <td>Polskie – państwowe</td>
+          <td><span class="wstat wstat-done">Zakończone</span></td><td>1/1</td>
+          <td>Puźniki (etap poszukiwań). Zgodę wydano w listopadzie 2022 roku.</td>
+        </tr>
+        <tr class="third">
+          <td>2022</td><td><span class="tag third">Niemcy (Volksbund)</span></td><td>Ukraina</td>
+          <td>Niemieckie – państwowe/prywatne</td>
+          <td><span class="wstat wstat-done">Zakończone</span></td><td>-</td>
+          <td>Odnalezienie 816 ciał mimo trwającej pełnoskalowej inwazji rosyjskiej.</td>
+        </tr>
+        <tr class="third">
+          <td>2023</td><td><span class="tag third">Niemcy (Volksbund)</span></td><td>Ukraina</td>
+          <td>Niemieckie – prywatne</td>
+          <td><span class="wstat wstat-done">Zakończone</span></td><td>-</td>
+          <td>972 ekshumacje; w tym odnalezienie 41 poległych z katastrofy samolotu w Sopiwie.</td>
+        </tr>
+        <tr class="third">
+          <td>2023 (czerwiec)</td><td><span class="tag third">Niemcy (Volksbund)</span></td><td>Ukraina</td>
+          <td>Niemieckie – państwowe</td>
+          <td><span class="wstat wstat-stalled">Zawieszone</span></td><td>-</td>
+          <td>Zbiornik kachowski: znaleziska po przerwaniu tamy; linia frontu i miny blokują dostęp.</td>
+        </tr>
+        <tr class="pl">
+          <td>2023 (sierpień)</td><td><span class="tag pl">Polska (WiD*)</span></td><td>Ukraina</td>
+          <td>Polskie – państwowe</td>
+          <td><span class="wstat wstat-done">Zakończone</span></td><td>1/1</td>
+          <td>Puźniki (etap ekshumacji). Pochówek odbył się w IX 2025 roku.</td>
+        </tr>
+        <tr class="pl">
+          <td>2024 (styczeń)</td><td><span class="tag pl">Polska (IPN)</span></td><td>Ukraina</td>
+          <td>Nieprzyznane</td>
+          <td><span class="wstat wstat-blocked">Zablokowane</span></td><td>0/1</td>
+          <td>Wniosek o poszukiwania w Hucie Pieniackiej. Odrzucony VIII 2024.</td>
+        </tr>
+        <tr class="third">
+          <td>2024</td><td><span class="tag third">Niemcy (Volksbund)</span></td><td>Ukraina</td>
+          <td>Niemieckie – państwowe/prywatne</td>
+          <td><span class="wstat wstat-done">Zakończone</span></td><td>-</td>
+          <td>Prace trwają nadal w bezpieczniejszych regionach zachodnich i centralnych.</td>
+        </tr>
+        <tr class="pl">
+          <td>2025</td><td><span class="tag pl">Polska (IPN)</span></td><td>Ukraina</td>
+          <td>Polskie – państwowe</td>
+          <td><span class="wstat wstat-blocked">Częściowo zablokowane</span></td><td>1/26</td>
+          <td>26 wniosków: 1 zrealizowany (Mościska/Zboiska), 9 odrzuconych, 15 oczekujących.</td>
+        </tr>
+        <tr class="ua">
+          <td>2025</td><td><span class="tag ua">Ukraina</span></td><td>Polska</td>
+          <td>Ukraińskie – państwowe</td>
+          <td><span class="wstat wstat-done">Zakończone</span></td><td>1/1</td>
+          <td>Prace poszukiwawcze we wsi Jureczkowa.</td>
+        </tr>
+        <tr class="third">
+          <td>2025</td><td><span class="tag third">Niemcy (Volksbund)</span></td><td>Ukraina</td>
+          <td>Niemieckie – państwowe</td>
+          <td><span class="wstat wstat-done">Zakończone</span></td><td>-</td>
+          <td>Odnalezienie 825 ciał; prace utrudnione względami bezpieczeństwa.</td>
+        </tr>
+        <tr class="pl">
+          <td>2026 (styczeń)</td><td><span class="tag pl">Polska (IPN)</span></td><td>Ukraina</td>
+          <td>Polskie – państwowe</td>
+          <td><span class="wstat wstat-progress">W toku</span></td><td>0/60+</td>
+          <td>Ponowienie 24 wniosków dla ponad 60 lokalizacji.</td>
+        </tr>
+        <tr class="pl">
+          <td>2026 (czerwiec)</td><td><span class="tag pl">Polska (IPN)</span></td><td>Ukraina</td>
+          <td>Polskie – państwowe</td>
+          <td><span class="wstat wstat-progress">W toku</span></td><td>0/3</td>
+          <td>Ostrówki, Wola Ostrowiecka i Hołosko – prace powtórne.</td>
+        </tr>
+        <tr class="ua">
+          <td>2026</td><td><span class="tag ua">Ukraina</span></td><td>Polska</td>
+          <td>Ukraińskie – państwowe</td>
+          <td><span class="wstat wstat-progress">Nierozpoczęte</span></td><td>0/2</td>
+          <td>Planowane prace w Sahryniu i Łaskowie.</td>
+        </tr>
+        <tr class="third">
+          <td>2026</td><td><span class="tag third">Niemcy (Volksbund)</span></td><td>Ukraina</td>
+          <td>Niemieckie – państwowe</td>
+          <td><span class="wstat wstat-progress">Planowane</span></td><td>Cały kraj</td>
+          <td>Plan kontynuacji systematycznych poszukiwań w bezpieczniejszych regionach Ukrainy.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

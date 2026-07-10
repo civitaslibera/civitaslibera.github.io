@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -93,12 +93,27 @@
     }
     footer a { color: #333; text-decoration: none; }
     footer a:hover { color: #c9a96e; }
+    h1 a { color: inherit; text-decoration: none; }
+
+    /* ── MODERN TIMELINE ──────────────────────── */
+    .timeline-heading {
+      font-size: 1.4em;
+      font-weight: normal;
+      color: #c9a96e;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin: 4em 0 1em;
+      padding-top: 2em;
+      border-top: 1px solid #2a2a2a;
+      text-align: center;
+    }
+
   </style>
 </head>
 <body>
 
-  <h1>Civitas Libera</h1>
-  <h2>Polish–Ukrainian Conflict 1918–1947</h2>
+  <h1><a href="../">Civitas Libera</a></h1>
+  <h3 class="timeline-heading">Polish–Ukrainian Conflict 1918–1947</h3>
 
   <a class="teaser-link" href="UA-PL-X.html">
     <div class="teaser-clip">
@@ -113,7 +128,20 @@
     <a class="lang-btn" href="UA/">UA</a>
   </div>
 
-  <footer><a href="../">civitaslibera.github.io</a></footer>
+  <h3 class="timeline-heading">Conflict in Modern Days (1991-Today)</h3>
+
+  <a class="teaser-link" href="../UA-PL-Volyhn-Modern/ENG/">
+    <div class="teaser-clip">
+      <img src="ArticleModern Header.png" alt="Conflict in Modern Days (1991-Today)" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;">
+    </div>
+  </a>
+
+  <div class="section-label">Read the article</div>
+  <div class="lang-row">
+    <a class="lang-btn" href="../UA-PL-Volyhn-Modern/PL/">PL</a>
+    <a class="lang-btn" href="../UA-PL-Volyhn-Modern/ENG/">ENG</a>
+    <a class="lang-btn" href="../UA-PL-Volyhn-Modern/UA/">UA</a>
+  </div>
 
   <script>
     function scaleTeaser() {

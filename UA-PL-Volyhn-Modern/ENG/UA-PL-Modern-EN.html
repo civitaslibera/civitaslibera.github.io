@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polish–Ukrainian Conflict in Modern Days (1991–Today)</title>
+  <style>
+    body { font-family: Georgia, serif; max-width: 860px; margin: 40px auto; padding: 0 20px; line-height: 1.7; color: #1a1a1a; }
+    h1 { font-size: 1.6em; border-bottom: 2px solid #7b1535; padding-bottom: 8px; }
+    h2 { font-size: 1.2em; margin-top: 2em; color: #222; border-left: 4px solid #7b1535; padding-left: 10px; }
+    h3 { font-size: 1em; margin-top: 1.4em; color: #444; }
+    em { font-style: italic; }
+    table { border-collapse: collapse; width: 100%; margin: 0.6em 0; font-size: 0.9em; }
+    td, th { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+    th { background: #eee; }
+
+    /* ── TIMELINE ─────────────────────────────── */
+    .timeline { position: relative; padding-left: 28px; border-left: 3px solid #ccc; margin: 1.2em 0; }
+    .timeline-item { position: relative; margin-bottom: 1.4em; }
+    .timeline-item::before {
+      content: '';
+      position: absolute; left: -36px; top: 6px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: #888; border: 2px solid #fff; box-shadow: 0 0 0 2px #888;
+    }
+    .timeline-item.both::before  { background: #3b6ea5; box-shadow: 0 0 0 2px #3b6ea5; }
+    .timeline-item.third::before { background: #6c3483; box-shadow: 0 0 0 2px #6c3483; }
+    .timeline-item.pl::before    { background: #7b1535; box-shadow: 0 0 0 2px #7b1535; }
+    .timeline-item.ua::before    { background: #c9a96e; box-shadow: 0 0 0 2px #c9a96e; }
+
+    .timeline-item > summary {
+      list-style: none; cursor: pointer; user-select: none; display: block; color: #1a1a1a;
+    }
+    .timeline-item > summary::-webkit-details-marker { display: none; }
+    .timeline-item[open] > summary { margin-bottom: 6px; }
+    .timeline-item p { color: #333; font-size: 0.95em; }
+
+    /* ── TAGS ─────────────────────────────────── */
+    .tag { display: inline-block; font-size: 0.72em; padding: 1px 7px; border-radius: 10px; color: #fff; margin-left: 6px; vertical-align: middle; }
+    .tag.both  { background: #3b6ea5; }
+    .tag.third { background: #6c3483; }
+    .tag.pl    { background: #7b1535; }
+    .tag.ua    { background: #c9a96e; color: #1a1a1a; }
+
+    .timeline-date { font-size: 0.82em; font-weight: bold; color: #555; margin-bottom: 2px; }
+
+    /* ── LEGEND ──────────────────────────────── */
+    .legenda { font-size: 0.83em; margin: 0.5em 0 1.4em; color: #444; display: flex; flex-wrap: wrap; gap: 12px; }
+    .legenda-item { display: flex; align-items: center; gap: 5px; }
+    .dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+
+    /* ── EXHUMATIONS TABLE ──────────────────────── */
+    .exh-note { color: #333; font-size: 0.95em; line-height: 1.7; margin: 0 0 14px; }
+    .exh-table-wrap {
+      overflow-x: auto;
+      border: 1px solid #ddd;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0.6em 0;
+      box-sizing: border-box;
+      padding: 0 20px;
+    }
+    .exh-table { width: 100%; min-width: 900px; border-collapse: collapse; font-size: 0.82em; margin: 0; }
+    .exh-table th, .exh-table td { padding: 7px 9px; border: 1px solid #ddd; text-align: left; vertical-align: top; }
+    .exh-table thead th {
+      background: #eee; color: #222; font-weight: bold;
+      text-transform: uppercase; font-size: 0.85em; letter-spacing: 0.03em;
+      position: sticky; top: 0;
+    }
+    .exh-table tbody tr.pl    { background: rgba(123, 21, 53, 0.06); }
+    .exh-table tbody tr.ua    { background: rgba(201, 169, 110, 0.16); }
+    .exh-table tbody tr.third { background: rgba(108, 52, 131, 0.07); }
+    .exh-table tbody tr.pl    td:first-child { border-left: 4px solid #7b1535; }
+    .exh-table tbody tr.ua    td:first-child { border-left: 4px solid #c9a96e; }
+    .exh-table tbody tr.third td:first-child { border-left: 4px solid #6c3483; }
+
+    .wstat { display: inline-block; padding: 2px 9px; border-radius: 10px; font-size: 0.85em; font-weight: bold; color: #fff; white-space: nowrap; }
+    .wstat-done     { background: #3d8b57; }
+    .wstat-progress { background: #3b6ea5; }
+    .wstat-blocked  { background: #a13d3d; }
+    .wstat-stalled  { background: #c9822e; }
+  </style>
+</head>
+<body>
+
+  <h1>Polish–Ukrainian Conflict in Modern Days (1991–Today)</h1>
+
+  <h2>Overview</h2>
+
+  <p class="exh-note">Both states demonstrate how historical issues can become political priorities particularly after gaining wider public attention, suggesting that political calculations, domestic considerations, and public expectations may sometimes influence approaches alongside a genuine search for justice and reconciliation.</p>
+  <p class="exh-note">On the Polish side, this dynamic can be observed in the significant time gap between the early post-independence period and the wider recognition of the Volhynia massacres following the publication of the works of Władysław Siemaszko and Ewa Siemaszko in 2000. The limited institutional attention during the years between 1992 and 2000 raises questions about whether historical issues receive sustained state attention primarily when they become politically significant and publicly visible.</p>
+  <p class="exh-note">A similar pattern can be observed on the Ukrainian side in the relatively recent approach toward certain historical exhumation requests. The limited progress over previous decades, followed by renewed activity in specific circumstances, raises questions about whether practical cooperation is pursued consistently or whether it becomes more likely when there is a clear political benefit or broader strategic interest involved.</p>
+  <p class="exh-note">At the same time, Ukraine continues to promote elements of a national historical narrative in which figures and organizations connected to the Organization of Ukrainian Nationalists (OUN-B) and Ukrainian Insurgent Army (UPA) are often presented primarily as symbols of national struggle, while a more critical examination of crimes committed by these organizations remains limited and politically sensitive. This remains one of the most divisive historical issues between Poland and Ukraine and continues to attract criticism from some external observers who emphasize the importance of confronting difficult and controversial aspects of national history.</p>
+  <p class="exh-note">In this sense, the issue is not only whether historical responsibility is acknowledged, but whether governments are willing to act when doing so carries political costs rather than political benefits. The pattern observed on both sides suggests that when historical issues do not provide immediate political advantage, the suffering of victims can become secondary to political calculations. As a result, victims and their families risk being neglected by the very states that claim to preserve their historical memory. Political interests may take priority over remembrance and justice, leaving unresolved tragedies sidelined for years and allowing the needs of victims to become subordinate to contemporary state objectives.</p>
+  <p class="exh-note">Ultimately, the tragedy is that political struggles on both sides continue to develop around the memory of victims of horrific crimes. Instead of allowing historical truth and remembrance to serve as a foundation for reconciliation, the suffering of the past is too often transformed into an instrument of modern political conflict. When historical memory becomes primarily a matter of national interests rather than a commitment to truth and dignity for victims, reconciliation becomes significantly more difficult.</p>
+
+  <h2>Main Events (1997–Now)</h2>
+
+  <div class="legenda">
+    <span class="legenda-item"><span class="dot" style="background:#c9a96e"></span> Ukraine</span>
+    <span class="legenda-item"><span class="dot" style="background:#7b1535"></span> Poland</span>
+    <span class="legenda-item"><span class="dot" style="background:#3b6ea5"></span> Joint</span>
+    <span class="legenda-item"><span class="dot" style="background:#6c3483"></span> 3rd parties</span>
+  </div>
+
+  <div class="timeline">
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">21 May 1997 <span class="tag both">Joint</span></div>
+      ▶ <strong>Joint declaration "On Understanding and Reconciliation"</strong>
+    </summary>
+    <p>Presidents Aleksander Kwaśniewski and Leonid Kuczma sign a document in Kyiv calling for mutual forgiveness of past wrongs and a dialogue based on historical truth.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">2000 <span class="tag third">3rd parties</span></div>
+      ▶ <strong>The Siemaszko monograph</strong>
+    </summary>
+    <p>Publication of Władysław and Ewa Siemaszko's two-volume <em>"Genocide committed by Ukrainian nationalists against the Polish population of Volhynia 1939–1945"</em> becomes a key reference point for Polish research into the scale of the crime (approx. 60,000 victims in Volhynia alone).</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">2000 <span class="tag third">3rd parties</span></div>
+      ▶ <strong>Sympathy survey in Ukraine</strong>
+    </summary>
+    <p>A survey conducted in Ukraine found that Poles ranked third in the hierarchy of national sympathies, behind Belarus (1st) and Russia (2nd).</p>
+  </details>
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">11 July 2003 <span class="tag both">Joint</span></div>
+      ▶ <strong>60th anniversary commemoration at Pawlivka</strong>
+    </summary>
+    <p>Presidents Kwaśniewski and Kuczma unveil a reconciliation monument at Pawlivka; the Polish president explicitly called the events genocide, while the Ukrainian side maintained a narrative of "symmetrical guilt".</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">11 July 2003 <span class="tag third">3rd parties</span></div>
+      ▶ <strong>CBOS survey on Poles' knowledge</strong>
+    </summary>
+    <p>A CBOS poll conducted around the same time found that 44% of Poles could not identify either the victims or the perpetrators of the Volhynia massacre.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">12 October 2007 <span class="tag ua">Ukraine</span></div>
+      ▶ <strong>Roman Shukhevych proclaimed Hero of Ukraine</strong>
+    </summary>
+    <p>President Viktor Yushchenko posthumously honours the UPA commander, provoking sharp protests in Poland over his role in the Volhynia massacre.</p>
+  </details>
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">28 February 2009 <span class="tag both">Joint</span></div>
+      ▶ <strong>Joint commemoration at Huta Pieniacka</strong>
+    </summary>
+    <p>Presidents Lech Kaczyński and Viktor Yushchenko pay tribute to Poles murdered by Ukrainian units, though the term "genocide" is avoided in the speeches.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">15 July 2009 <span class="tag pl">Poland</span></div>
+      ▶ <strong>Sejm resolution on the "hallmarks of genocide"</strong>
+    </summary>
+    <p>The Polish parliament adopts by acclamation a document describing the Volhynia crime as a murder of an ethnic-cleansing character bearing the hallmarks of genocide.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">2008 <span class="tag third">3rd parties</span></div>
+      ▶ <strong>A deepening knowledge crisis in Poland</strong>
+    </summary>
+    <p>A further CBOS survey shows worsening historical awareness: 54% of Poles no longer knew who the victims of the Volhynia massacre were, and 57% did not know who the perpetrators were.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">22 January 2010 <span class="tag ua">Ukraine</span></div>
+      ▶ <strong>Stepan Bandera proclaimed Hero of Ukraine</strong>
+    </summary>
+    <p>President Yushchenko's controversial decision to honour the OUN leader provokes consternation and official protests from Polish authorities.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">25 February 2010 <span class="tag third">3rd parties</span></div>
+      ▶ <strong>European Parliament resolution on Bandera</strong>
+    </summary>
+    <p>MEPs express regret over the awarding of the national hero title to Bandera and call on Ukraine's new authorities to reverse the decision in the name of European values.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">2 April 2011 <span class="tag ua">Ukraine</span></div>
+      ▶ <strong>Ukrainian court revokes the Hero of Ukraine titles</strong>
+    </summary>
+    <p>Ukraine's Supreme Administrative Court upholds the annulment of Yushchenko's decrees regarding Bandera and Shukhevych, temporarily easing the diplomatic dispute.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">11 July 2013 <span class="tag pl">Poland</span></div>
+      ▶ <strong>70th anniversary and acknowledgment of "exceptional cruelty"</strong>
+    </summary>
+    <p>The Sejm and Senate adopt resolutions describing the crime as an "ethnic cleansing bearing the hallmarks of genocide", mentioning for the first time the exceptional cruelty of the perpetrators.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">9 April 2015 <span class="tag ua">Ukraine</span></div>
+      ▶ <strong>Ukrainian law grants combatant status to OUN-UPA</strong>
+    </summary>
+    <p>The Verkhovna Rada grants combatant status to members of OUN and UPA and bans questioning the legitimacy of their struggle, just hours after President Komorowski's conciliatory speech in Kyiv — seen in Poland as a slap in the face.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">8 July 2016 <span class="tag ua">Ukraine</span></div>
+      ▶ <strong>President Poroshenko's symbolic gesture in Warsaw</strong>
+    </summary>
+    <p>The Ukrainian president kneels before the monument to the victims of the Volhynia massacre in Warsaw's Żoliborz district — one of the most important, though little-publicised, gestures of reconciliation.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">22 July 2016 <span class="tag pl">Poland</span></div>
+      ▶ <strong>Establishment of the National Day of Remembrance for Genocide Victims</strong>
+    </summary>
+    <p>The Sejm designates 11 July as a day of remembrance for the victims of crimes committed by Ukrainian nationalists, met with "deep concern" from the Ukrainian parliament.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">7 October 2016 <span class="tag third">3rd parties</span></div>
+      ▶ <strong>Premiere of Wojciech Smarzowski's film "Wołyń"</strong>
+    </summary>
+    <p>The film causes an enormous public reaction in Poland and is banned in Ukraine, sharpening mutual perceptions of this history.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">20 October 2016 <span class="tag third">3rd parties</span></div>
+      ▶ <strong>Joint Declaration of Memory and Solidarity</strong>
+    </summary>
+    <p>The parliaments of Poland, Ukraine and Lithuania jointly condemn totalitarian regimes and hold the USSR responsible for the outbreak of the Second World War.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">April 2017 <span class="tag pl">Poland</span></div>
+      ▶ <strong>Dismantling of the Hruszowice UPA monument</strong>
+    </summary>
+    <p>A monument honoring UPA fighters, erected in Hruszowice in 1994 and long described by Polish authorities as unauthorized, is dismantled by local Polish authorities. Ukraine claims UPA fighters were buried beneath it.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">April 2017 <span class="tag ua">Ukraine</span></div>
+      ▶ <strong>Ukrainian moratorium on exhumations</strong>
+    </summary>
+    <p>In response to the dismantling of the Hruszowice monument, Kyiv bans search and exhumation work for Polish specialists.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">26 January 2018 <span class="tag pl">Poland</span></div>
+      ▶ <strong>Dispute over the amended IPN law</strong>
+    </summary>
+    <p>The introduction of provisions on "crimes of Ukrainian nationalists" leads to a sharp diplomatic crisis and the suspension of the Polish-Ukrainian Historians' Forum, though some provisions are later ruled imprecise.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">June 2018 <span class="tag pl">Poland</span></div>
+      ▶ <strong>Repeal of criminal penalties in the IPN law</strong>
+    </summary>
+    <p>Following significant diplomatic pressure from Ukraine, Israel and the United States, Poland repeals the criminal penalties introduced in the January 2018 amendment, though civil liability for denying the crimes remains a possibility.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">2018 <span class="tag pl">Poland</span></div>
+      ▶ <strong>IPN archaeological research at the Hruszowice site</strong>
+    </summary>
+    <p>Poland's Institute of National Remembrance (IPN) conducts archaeological research at the former monument site and concludes it found no evidence of UPA graves at that exact location, weakening the Ukrainian argument that the monument was directly protecting a burial site.</p>
+  </details>
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">8 July 2018 <span class="tag both">Joint</span></div>
+      ▶ <strong>Separate 75th-anniversary commemorations</strong>
+    </summary>
+    <p>President Duda attends ceremonies in Lutsk while President Poroshenko attends events in Sahryń at the same time, exposing the lack of a shared vision for the anniversary.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">February 2019 <span class="tag third">3rd parties</span></div>
+      ▶ <strong>CBOS survey on sympathy towards Ukrainians</strong>
+    </summary>
+    <p>After a period of tension, a rise in Polish sympathy toward Ukrainians is recorded (31% versus 24% a year earlier), linked to softened historical rhetoric.</p>
+  </details>
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">19-21 January 2022 <span class="tag both">Joint</span></div>
+      ▶ <strong>Talks in Wisła and a "tactical truce"</strong>
+    </summary>
+    <p>Presidents Duda and Zelensky agree that Poland would refrain from condemning the entire Ukrainian national movement in exchange for curbing the cult of the perpetrators of the Volhynia massacre (Shukhevych, Savur).</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">2022 <span class="tag third">3rd parties</span></div>
+      ▶ <strong>EU "Solidarity Lanes" opened for Ukrainian grain</strong>
+    </summary>
+    <p>After Russia's February 2022 invasion, naval blockades and attacks disrupt Ukraine's Black Sea grain export routes. The EU establishes "Solidarity Lanes" to help Ukraine export agricultural products through neighbouring countries, including Poland. Much of the grain is meant to transit onward to Africa and the Middle East, but some remains in Poland and other neighbouring states because of logistical problems.</p>
+  </details>
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">Late 2022 – early 2023 <span class="tag both">Joint</span></div>
+      ▶ <strong>Growing tensions among farmers over Ukrainian grain</strong>
+    </summary>
+    <p>Polish farmers complain that Ukrainian grain is depressing local prices, arguing lower Ukrainian production costs leave them unable to sell their own harvest profitably; the government faces mounting pressure from rural communities ahead of the 2023 parliamentary elections. Poland argues it opened its market to help Ukraine but that protecting Polish agriculture is now necessary, while Ukraine argues grain exports are vital for its economy and wartime survival, and sees restrictions as damaging one of its main sources of revenue.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">February 2023 <span class="tag ua">Ukraine</span></div>
+      ▶ <strong>Controversial naming of a military unit after Shukhevych</strong>
+    </summary>
+    <p>The naming of the 10th Mountain Assault Brigade "Edelweiss" evokes negative historical associations in Poland and raises questions about continuity with collaborationist formations.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">April 2023 <span class="tag pl">Poland</span></div>
+      ▶ <strong>Poland bans imports of Ukrainian grain</strong>
+    </summary>
+    <p>Poland announces a ban on imports of Ukrainian grain and several other agricultural products; Hungary and other neighbouring countries introduce similar measures. The European Commission initially criticises the unilateral national bans, as trade policy is an EU responsibility.</p>
+  </details>
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">5 April 2023 <span class="tag both">Joint</span></div>
+      ▶ <strong>Zelenskyy awarded the Order of the White Eagle</strong>
+    </summary>
+    <p>Volodymyr Zelenskyy receives Poland's highest state honour, the Order of the White Eagle, during an official visit to Poland.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">May 2023 <span class="tag third">3rd parties</span></div>
+      ▶ <strong>CBOS survey on an expected apology</strong>
+    </summary>
+    <p>A CBOS poll finds that 78% of Poles believe President Zelensky should apologise for Volhynia and 72% describe the events unambiguously as genocide.</p>
+  </details>
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">May 2023 <span class="tag both">Joint</span></div>
+      ▶ <strong>Diplomatic exchange over an apology</strong>
+    </summary>
+    <p>Polish Foreign Ministry spokesman Łukasz Jasina's suggestion that Ukraine should apologise is called "unacceptable and unfortunate" by Ukrainian ambassador Vasyl Zvarych.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">May-September 2023 <span class="tag third">3rd parties</span></div>
+      ▶ <strong>EU compromise on temporary grain restrictions</strong>
+    </summary>
+    <p>The European Commission introduces temporary restrictions on Ukrainian wheat, maize, rapeseed and sunflower seed imports into Poland, Bulgaria, Hungary, Romania and Slovakia, while transit through these countries remains possible, aiming to reduce pressure on local markets while preserving Ukraine's export routes.</p>
+  </details>
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">9 July 2023 <span class="tag both">Joint</span></div>
+      ▶ <strong>Joint prayer in Lutsk Cathedral</strong>
+    </summary>
+    <p>On the 80th anniversary, Presidents Duda and Zelensky take part in an ecumenical service honouring the "innocent victims of Volhynia".</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">July 2023 <span class="tag pl">Poland</span></div>
+      ▶ <strong>Dispute over medals and "pitchfork politics"</strong>
+    </summary>
+    <p>During the 80th-anniversary commemorations, President Duda criticises circles demanding radical action, triggering a sharp dispute with Kresy activists; political calls to strip Zelensky of the Order of the White Eagle are also raised in parliamentary debate.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">11 July 2023 <span class="tag pl">Poland</span></div>
+      ▶ <strong>Unanimous Sejm resolution for the 80th anniversary</strong>
+    </summary>
+    <p>The Polish parliament calls on Ukraine to acknowledge guilt, stressing that reconciliation must include the exhumation of all victims of the crime, and uses the term "genocide" five times.</p>
+  </details>
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">September 2023 <span class="tag both">Joint</span></div>
+      ▶ <strong>Ban extension refused; Ukraine files WTO complaint</strong>
+    </summary>
+    <p>The European Commission decides not to extend the temporary restrictions, but Poland, Hungary and Slovakia continue their own national bans on Ukrainian grain. Ukraine responds by filing a complaint at the World Trade Organization against Poland and the other countries. Poland argues it is defending its farmers, while Ukraine argues that Poland, despite being an ally, is restricting a crucial wartime export sector.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">September 2023 <span class="tag third">3rd parties</span></div>
+      ▶ <strong>Scandal in the Canadian Parliament</strong>
+    </summary>
+    <p>The honouring of SS Galizien veteran Yaroslav Hunka draws international condemnation, including from Poland and Jewish organisations, and recalls the unresolved role of Ukrainian collaborationist units.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">2024 <span class="tag third">3rd parties</span></div>
+      ▶ <strong>Sharp decline in Ukrainian sympathy toward Poles</strong>
+    </summary>
+    <p>A public opinion poll records a fall in positive sentiment toward Poles among Ukrainians from 83% in 2022 to 41% in 2024, attributed largely to the "grain crisis" and border blockades.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">2024 <span class="tag third">3rd parties</span></div>
+      ▶ <strong>Ukrainian survey on exhumations</strong>
+    </summary>
+    <p>Only a third of Ukrainians surveyed support the unconditional unblocking of exhumation work, while 40% believe it should be contingent on Poland meeting specific conditions.</p>
+  </details>
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">26 November 2024 <span class="tag both">Joint</span></div>
+      ▶ <strong>Sikorski-Sybiha declaration in Warsaw</strong>
+    </summary>
+    <p>The foreign ministers declare there are no formal obstacles to exhumations and express readiness to establish a joint historical working group.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">11 July 2025 <span class="tag pl">Poland</span></div>
+      ▶ <strong>First official national commemoration under the new law</strong>
+    </summary>
+    <p>Poland commemorates the victims of the Volhynia massacre under legislation signed by the president in June 2025.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">12 July 2025 <span class="tag pl">Poland</span></div>
+      ▶ <strong>Nawrocki calls for full-scale exhumations at Chełm</strong>
+    </summary>
+    <p>President-elect Karol Nawrocki calls for full-scale exhumations during a commemoration in Chełm, asserting that historical truth is a prerequisite for a true partnership against Russian neo-imperialism.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">16 July 2025 <span class="tag third">3rd parties</span></div>
+      ▶ <strong>Lublin Triangle historian platform announced</strong>
+    </summary>
+    <p>Within the framework of the Lublin Triangle, a new platform for historians is announced to facilitate research and dialogue on contentious historical grievances.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">March 2026 <span class="tag ua">Ukraine</span></div>
+      ▶ <strong>Official working structure to design the project</strong>
+    </summary>
+    <p>A high-level meeting - Presidential Office, parliament, government and historians - is held to design the project. It explicitly included OUN figures.</p>
+  </details>
+
+  <details class="timeline-item both">
+    <summary>
+      <div class="timeline-date">May 2026 <span class="tag both">Joint</span></div>
+      ▶ <strong>Major Polish-Ukrainian historical conference</strong>
+    </summary>
+    <p>The initiative aims to create a permanent, professional platform for dialogue between experts from both countries, independent of current political cycles. No major conclusions were reached, and the Polish IPN was not included in the talks.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">May 2026 <span class="tag ua">Ukraine</span></div>
+      ▶ <strong>Reburial of Andriy Melnyk</strong>
+    </summary>
+    <p>Ukraine carries out the reburial of Andriy Melnyk, leader of OUN-M, and his wife at the National Military Memorial Cemetery.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">26 May 2026 <span class="tag ua">Ukraine</span></div>
+      ▶ <strong>Military unit named "Heroes of the UPA"</strong>
+    </summary>
+    <p>President Zelenskyy officially gives a Ukrainian military unit the honorary name "Heroes of the UPA".</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">29 May 2026 <span class="tag pl">Poland</span></div>
+      ▶ <strong>Nawrocki announces intent to revoke the Order</strong>
+    </summary>
+    <p>Senior Polish officials and institutions respond publicly: President Karol Nawrocki announces he will seek to revoke the Order of the White Eagle previously awarded to Zelenskyy.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">19 June 2026 <span class="tag pl">Poland</span></div>
+      ▶ <strong>Zelenskyy stripped of the Order of the White Eagle</strong>
+    </summary>
+    <p>Poland strips Volodymyr Zelenskyy of the Order of the White Eagle, the honour he had received during his April 2023 visit.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">20 June 2026 <span class="tag ua">Ukraine</span></div>
+      ▶ <strong>Zelenskyy returns the Order via Nova Poshta</strong>
+    </summary>
+    <p>Zelenskyy sends the Order of the White Eagle back to President Nawrocki via the standard shipping branch Nova Poshta, an act viewed as a major diplomatic snub.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">20 June 2026 <span class="tag ua">Ukraine</span></div>
+      ▶ <strong>Mass return of Polish honours in solidarity</strong>
+    </summary>
+    <p>Prominent Ukrainian figures, including former presidents Kuchma, Yushchenko and Poroshenko, as well as Kyrylo Budanov, announce they will give up their Polish state honours in solidarity with Zelenskyy.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">25-26 June 2026 <span class="tag ua">Ukraine</span></div>
+      ▶ <strong>Zelenskyy skips the Ukraine Recovery Conference in Gdańsk</strong>
+    </summary>
+    <p>Zelenskyy refuses to attend the Ukraine Recovery Conference in Gdańsk, sending a lower-level delegation led by the Prime Minister instead.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">28 June 2026 <span class="tag ua">Ukraine</span></div>
+      ▶ <strong>Draft law on the Ukrainian National Pantheon submitted</strong>
+    </summary>
+    <p>A draft law on the Ukrainian National Pantheon is submitted to parliament.</p>
+  </details>
+
+  <details class="timeline-item pl">
+    <summary>
+      <div class="timeline-date">30 June 2026 <span class="tag pl">Poland</span></div>
+      ▶ <strong>Polish warnings over Ukraine's EU accession</strong>
+    </summary>
+    <p>Officials suggest Ukraine's membership could be blocked until the "cult of Bandera" and the truth about Volhynia are addressed in line with European values.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">July 2026 <span class="tag ua">Ukraine</span></div>
+      ▶ <strong>Verkhovna Rada establishes the Pantheon</strong>
+    </summary>
+    <p>The Verkhovna Rada adopts a law establishing the Pantheon as a state memorial system in Kyiv.</p>
+  </details>
+
+  <details class="timeline-item third">
+    <summary>
+      <div class="timeline-date">8 July 2026 <span class="tag third">3rd parties</span></div>
+      ▶ <strong>EU resolution criticizes Ukrainian historical policies</strong>
+    </summary>
+    <p>The European Union issues a resolution/statement criticizing Ukraine's historical policies, including the treatment of the Volhynia massacre and the commemoration of OUN-UPA figures.</p>
+  </details>
+
+  <details class="timeline-item ua">
+    <summary>
+      <div class="timeline-date">July 2026 <span class="tag ua">Ukraine</span></div>
+      ▶ <strong>Budanov: Ukraine will not accept an ultimatum from anyone</strong>
+    </summary>
+    <p>"Ukraine will not accept an ultimatum from anyone in this world. Recently it was Russia that tried to give us an ultimatum. No offense to Poland, but it is somewhat more powerful than Poland, and we still didn't accept it," says the head of the Office of the President of Ukraine, Kyrylo Budanov.</p>
+  </details>
+
+  </div>
+
+  <h2>The Exhumation Paradox</h2>
+
+  <p class="exh-note">The data reveal a troubling paradox: Ukraine finds ways to cooperate efficiently with Germany on historical issues, yet repeatedly delays and complicates exhumation efforts requested by Poland. The difference appears not to be a question of capability, but of priorities. This contrast suggests that exhumations concerning Polish victims have become less a matter of administrative procedure and more a matter of political will.</p>
+  <p class="exh-note">At times, these delays are defended by references to alleged procedural problems, safety concerns, or potential risks connected with the planned work. However, such explanations appear inconsistent when compared with Ukraine's cooperation with Germany on similar historical matters, where these obstacles do not seem to prevent progress. This raises concerns that arguments related to procedure or security may sometimes be applied selectively rather than representing genuine barriers.</p>
+  <p class="exh-note">Furthermore, the approval of certain excavation sites has also raised questions. In some cases, permissions appear to be limited to locations that are already known and documented, or to areas where the connection to the Volhynia massacre is unclear or indirect. This creates the impression that the selection of approved sites may not always reflect a comprehensive effort to identify and investigate the burial places of Polish victims, but rather a more restricted approach that limits the scope of historical clarification.</p>
+
+  <h2>Exhumation Agreements &amp; Works (1992–2026)</h2>
+
+  <div class="exh-table-wrap">
+    <table class="exh-table">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Submitting Party</th>
+          <th>Accepting Party</th>
+          <th>Funding</th>
+          <th>Work Status</th>
+          <th>Sites</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="pl">
+          <td>1992</td><td><span class="tag pl">Poland</span></td><td>Ukraine</td>
+          <td>Polish – State</td>
+          <td><span class="wstat wstat-done">Finished</span></td><td>2/2</td>
+          <td>Consent for 4 sites; exhumations in Ostrówki and Wola Ostrowiecka (324 victims).</td>
+        </tr>
+        <tr class="third">
+          <td>1993</td><td><span class="tag third">Germany (Volksbund)</span></td><td>Ukraine (Local Auth.)</td>
+          <td>German – Private</td>
+          <td><span class="wstat wstat-progress">Ongoing</span></td><td>Consolidation</td>
+          <td>Start of field grave consolidation for the future cemetery in Potelytsch.</td>
+        </tr>
+        <tr class="pl">
+          <td>1996</td><td><span class="tag pl">Poland (private)</span></td><td>Ukraine</td>
+          <td>Polish – Private</td>
+          <td><span class="wstat wstat-done">Finished</span></td><td>3/3</td>
+          <td>Private exhumation of three collective graves in Lityn (17 people).</td>
+        </tr>
+        <tr class="third">
+          <td>1996</td><td><span class="tag third">Germany (Fed. Govt)</span></td><td>Ukraine (Govt)</td>
+          <td>German – State</td>
+          <td><span class="wstat wstat-done">Finished</span></td><td>-</td>
+          <td>War Graves Agreement signed; Kyiv (Glewacha) cemetery dedicated with Helmut Kohl.</td>
+        </tr>
+        <tr class="third">
+          <td>1998</td><td><span class="tag third">Germany (Volksbund)</span></td><td>Ukraine (Regional)</td>
+          <td>German – Private</td>
+          <td><span class="wstat wstat-done">Finished</span></td><td>-</td>
+          <td>Official dedication of collective military cemeteries in Kharkiv and Potelytsch.</td>
+        </tr>
+        <tr class="third">
+          <td>2000</td><td><span class="tag third">Germany (Volksbund)</span></td><td>Ukraine (Regional)</td>
+          <td>German – Private</td>
+          <td><span class="wstat wstat-done">Finished</span></td><td>-</td>
+          <td>Dedication of collective cemetery in Kropyvnytskyi on donated land.</td>
+        </tr>
+        <tr class="third">
+          <td>2001</td><td><span class="tag third">Germany (Volksbund)</span></td><td>Ukraine (Regional)</td>
+          <td>German – Private</td>
+          <td><span class="wstat wstat-done">Finished</span></td><td>-</td>
+          <td>Dedication of Sevastopol-Goncharnoye cemetery in the Crimean Peninsula.</td>
+        </tr>
+        <tr class="pl">
+          <td>2001–2002</td><td><span class="tag pl">Poland</span></td><td>Ukraine</td>
+          <td>Polish – State</td>
+          <td><span class="wstat wstat-done">Finished</span></td><td>2/2</td>
+          <td>Pawliwka (Poryck) and Radowicze – discovery and burial of victims.</td>
+        </tr>
+        <tr class="pl">
+          <td>2011</td><td><span class="tag pl">Poland (ROPWiM)</span></td><td>Ukraine</td>
+          <td>Polish – State</td>
+          <td><span class="wstat wstat-done">Finished</span></td><td>2/2</td>
+          <td>Repeat works in Ostrówki and Wola Ostrowiecka (317 victims).</td>
+        </tr>
+        <tr class="pl">
+          <td>2013</td><td><span class="tag pl">Poland</span></td><td>Ukraine</td>
+          <td>Polish – State</td>
+          <td><span class="wstat wstat-done">Finished</span></td><td>1/1</td>
+          <td>Exhumation of approx. 80 people in the village of Gaj.</td>
+        </tr>
+        <tr class="third">
+          <td>2012</td><td><span class="tag third">Germany (Volksbund)</span></td><td>Ukraine</td>
+          <td>German – State</td>
+          <td><span class="wstat wstat-done">Completed</span></td><td>-</td>
+          <td>Balance: over 134,000 German soldiers moved to collective cemeteries by end of 2012.</td>
+        </tr>
+        <tr class="third">
+          <td>2014</td><td><span class="tag third">Germany (Volksbund)</span></td><td>Russia (De facto)</td>
+          <td>German – Private</td>
+          <td><span class="wstat wstat-blocked">Obstructed</span></td><td>Crimea</td>
+          <td>After annexation, work in Goncharnoye is limited to non-public "emergency exhumations".</td>
+        </tr>
+        <tr class="pl">
+          <td>2017 (Feb)</td><td><span class="tag pl">Poland (IPN)</span></td><td>Ukraine</td>
+          <td>Not allocated</td>
+          <td><span class="wstat wstat-blocked">Blocked</span></td><td>0/11</td>
+          <td>First IPN application (5 search sites, 6 exhumations). Blockade.</td>
+        </tr>
+        <tr class="pl">
+          <td>2018 (May)</td><td><span class="tag pl">Poland (IPN)</span></td><td>Ukraine</td>
+          <td>Not allocated</td>
+          <td><span class="wstat wstat-blocked">Blocked</span></td><td>0/11</td>
+          <td>Application for 11 locations (incl. Huta Pieniacka, Tynne). No response.</td>
+        </tr>
+        <tr class="pl">
+          <td>2019 (Sep)</td><td><span class="tag pl">Poland (IPN)</span></td><td>Ukraine</td>
+          <td>Polish – State</td>
+          <td><span class="wstat wstat-blocked">Partly blocked</span></td><td>2/13</td>
+          <td>Consent for search in 2 of 13 sites (Lviv-Zboiska and Hołosko) – mostly service men.</td>
+        </tr>
+        <tr class="pl">
+          <td>2020 (Feb)</td><td><span class="tag pl">Poland (IPN)</span></td><td>Ukraine</td>
+          <td>Not allocated</td>
+          <td><span class="wstat wstat-blocked">Blocked</span></td><td>0/14</td>
+          <td>Repeat of 13 locations and new application for Kropiwniki. No processing.</td>
+        </tr>
+        <tr class="pl">
+          <td>2021 (Oct)</td><td><span class="tag pl">Poland (IPN)</span></td><td>Ukraine</td>
+          <td>Polish – State</td>
+          <td><span class="wstat wstat-stalled">Stalled</span></td><td>0/1</td>
+          <td>Participation in works in Odesa. Halted by Russian invasion.</td>
+        </tr>
+        <tr class="pl">
+          <td>2022 (Jun)</td><td><span class="tag pl">Poland (WiD*)</span></td><td>Ukraine</td>
+          <td>Polish – State</td>
+          <td><span class="wstat wstat-done">Finished</span></td><td>1/1</td>
+          <td>Puźniki (search stage). Consent issued in Nov 2022.</td>
+        </tr>
+        <tr class="third">
+          <td>2022</td><td><span class="tag third">Germany (Volksbund)</span></td><td>Ukraine</td>
+          <td>German – State/Private</td>
+          <td><span class="wstat wstat-done">Finished</span></td><td>-</td>
+          <td>Recovery of 816 bodies despite the ongoing full-scale Russian invasion.</td>
+        </tr>
+        <tr class="third">
+          <td>2023</td><td><span class="tag third">Germany (Volksbund)</span></td><td>Ukraine</td>
+          <td>German – Private</td>
+          <td><span class="wstat wstat-done">Finished</span></td><td>-</td>
+          <td>972 exhumations; includes finding 41 fallen from a plane crash in Sopiv.</td>
+        </tr>
+        <tr class="third">
+          <td>2023 (Jun)</td><td><span class="tag third">Germany (Volksbund)</span></td><td>Ukraine</td>
+          <td>German – State</td>
+          <td><span class="wstat wstat-stalled">Suspended</span></td><td>-</td>
+          <td>Kakhovka Reservoir: findings after dam breach; front line and mines block access.</td>
+        </tr>
+        <tr class="pl">
+          <td>2023 (Aug)</td><td><span class="tag pl">Poland (WiD*)</span></td><td>Ukraine</td>
+          <td>Polish – State</td>
+          <td><span class="wstat wstat-done">Finished</span></td><td>1/1</td>
+          <td>Puźniki (exhumation stage). Burial held IX 2025.</td>
+        </tr>
+        <tr class="pl">
+          <td>2024 (Jan)</td><td><span class="tag pl">Poland (IPN)</span></td><td>Ukraine</td>
+          <td>Not allocated</td>
+          <td><span class="wstat wstat-blocked">Blocked</span></td><td>0/1</td>
+          <td>Search application in Huta Pieniacka. Rejected VIII 2024.</td>
+        </tr>
+        <tr class="third">
+          <td>2024</td><td><span class="tag third">Germany (Volksbund)</span></td><td>Ukraine</td>
+          <td>German – State/Private</td>
+          <td><span class="wstat wstat-done">Finished</span></td><td>-</td>
+          <td>Work continues in safer western and central regions.</td>
+        </tr>
+        <tr class="pl">
+          <td>2025</td><td><span class="tag pl">Poland (IPN)</span></td><td>Ukraine</td>
+          <td>Polish – State</td>
+          <td><span class="wstat wstat-blocked">Partly blocked</span></td><td>1/26</td>
+          <td>26 applications: 1 completed (Mościska/Zboiska), 9 rejected, 15 waiting.</td>
+        </tr>
+        <tr class="ua">
+          <td>2025</td><td><span class="tag ua">Ukraine</span></td><td>Poland</td>
+          <td>Ukrainian – State</td>
+          <td><span class="wstat wstat-done">Finished</span></td><td>1/1</td>
+          <td>Search works in the village of Jureczkowa.</td>
+        </tr>
+        <tr class="third">
+          <td>2025</td><td><span class="tag third">Germany (Volksbund)</span></td><td>Ukraine</td>
+          <td>German – State</td>
+          <td><span class="wstat wstat-done">Finished</span></td><td>-</td>
+          <td>Recovery of 825 bodies; work hampered by safety concerns.</td>
+        </tr>
+        <tr class="pl">
+          <td>2026 (Jan)</td><td><span class="tag pl">Poland (IPN)</span></td><td>Ukraine</td>
+          <td>Polish – State</td>
+          <td><span class="wstat wstat-progress">Ongoing</span></td><td>0/60+</td>
+          <td>Renewal of 24 applications for over 60 locations.</td>
+        </tr>
+        <tr class="pl">
+          <td>2026 (Jun)</td><td><span class="tag pl">Poland (IPN)</span></td><td>Ukraine</td>
+          <td>Polish – State</td>
+          <td><span class="wstat wstat-progress">Ongoing</span></td><td>0/3</td>
+          <td>Ostrówki, Wola Ostrowiecka, and Hołosko – repeat works.</td>
+        </tr>
+        <tr class="ua">
+          <td>2026</td><td><span class="tag ua">Ukraine</span></td><td>Poland</td>
+          <td>Ukrainian – State</td>
+          <td><span class="wstat wstat-progress">Not started</span></td><td>0/2</td>
+          <td>Planned works in Sahryń and Łasków.</td>
+        </tr>
+        <tr class="third">
+          <td>2026</td><td><span class="tag third">Germany (Volksbund)</span></td><td>Ukraine</td>
+          <td>German – State</td>
+          <td><span class="wstat wstat-progress">Planned</span></td><td>Nationwide</td>
+          <td>Plan to continue systematic searches in safer regions of Ukraine.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
